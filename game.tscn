@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://kxljhkmdhsjv"]
+[gd_scene load_steps=23 format=3 uid="uid://kxljhkmdhsjv"]
 
 [ext_resource type="Texture2D" uid="uid://t6rdxrbjqvds" path="res://Assets/GridTiles/Tilemap.svg" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://bnpi8dxkavuxt" path="res://Assets/ButtonIcon/Dot.svg" id="2_7jktm"]
