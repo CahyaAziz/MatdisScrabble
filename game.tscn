@@ -465,3 +465,5 @@ offset_top = 1245.0
 offset_right = 1732.0
 offset_bottom = 1337.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_iotsf")
+
+[node name="tileslot" type="Node2D" parent="."]
