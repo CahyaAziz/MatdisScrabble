@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cj26m1ltri7sf"]
 
 [ext_resource type="Script" uid="uid://bl25ombvodojc" path="res://main_menu.gd" id="1_gtid3"]
-[ext_resource type="Texture2D" uid="uid://mddu2d1somlh" path="res://Assets/Frame 979.png" id="1_wugcc"]
+[ext_resource type="Texture2D" uid="uid://mddu2d1somlh" path="res://Assets/GridTiles/Frame 979.png" id="1_wugcc"]
 [ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="2_gtid3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtjmy"]
@@ -83,7 +83,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 9
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -97,7 +97,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_wugcc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wtjmy")
 text = "Start Game"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Option" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -111,7 +111,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_wugcc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wtjmy")
 text = "Option"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -145,6 +145,6 @@ theme_override_fonts/font = ExtResource("2_gtid3")
 theme_override_font_sizes/font_size = 80
 text = "LexIQ"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_setting_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Option" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

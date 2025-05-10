@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyt6hgbiret8o"
-path="res://.godot/imported/Tile 3W.png-936bbcc20ef288f722581cf0b4bb9e2d.ctex"
+uid="uid://nxqy2s85bmfw"
+path="res://.godot/imported/Other.svg-2cf88302729c965b3c78573a3d798b34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tile 3W.png"
-dest_files=["res://.godot/imported/Tile 3W.png-936bbcc20ef288f722581cf0b4bb9e2d.ctex"]
+source_file="res://Assets/ButtonIcon/Other.svg"
+dest_files=["res://.godot/imported/Other.svg-2cf88302729c965b3c78573a3d798b34.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deknp8383a1cy"
-path="res://.godot/imported/Tile3L.png-99fdabe72d0c9a1dda0ec48eaead1271.ctex"
+uid="uid://mddu2d1somlh"
+path="res://.godot/imported/Frame 979.png-7b13a8da01fa64c26f0d51c02d42bab5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tile3L.png"
-dest_files=["res://.godot/imported/Tile3L.png-99fdabe72d0c9a1dda0ec48eaead1271.ctex"]
+source_file="res://Assets/GridTiles/Frame 979.png"
+dest_files=["res://.godot/imported/Frame 979.png-7b13a8da01fa64c26f0d51c02d42bab5.ctex"]
 
 [params]
 

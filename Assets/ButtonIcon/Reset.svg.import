@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp4wak76icu6q"
-path="res://.godot/imported/Tile 2w.png-d47cc5aa32f66c86b27b0c499138435c.ctex"
+uid="uid://bualvgmqha822"
+path="res://.godot/imported/Reset.svg-5ee4df91c2f1ea732a0802c20e3918f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tile 2w.png"
-dest_files=["res://.godot/imported/Tile 2w.png-d47cc5aa32f66c86b27b0c499138435c.ctex"]
+source_file="res://Assets/ButtonIcon/Reset.svg"
+dest_files=["res://.godot/imported/Reset.svg-5ee4df91c2f1ea732a0802c20e3918f2.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

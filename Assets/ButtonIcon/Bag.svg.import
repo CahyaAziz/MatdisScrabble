@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://skgmcp5ctvs4"
-path="res://.godot/imported/Tile 2.png-2376e6a7ee757281074fe91f9c728ff0.ctex"
+uid="uid://bmumk1dr22n44"
+path="res://.godot/imported/Bag.svg-a836e221a7772521751fd66adecea849.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tile 2.png"
-dest_files=["res://.godot/imported/Tile 2.png-2376e6a7ee757281074fe91f9c728ff0.ctex"]
+source_file="res://Assets/ButtonIcon/Bag.svg"
+dest_files=["res://.godot/imported/Bag.svg-a836e221a7772521751fd66adecea849.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

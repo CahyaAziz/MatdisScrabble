@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dopofe48lx4uf"
-path="res://.godot/imported/Tile 3W (1).png-48c702c946b67c99c3f11c6d9e22463f.ctex"
+uid="uid://t6rdxrbjqvds"
+path="res://.godot/imported/Tilemap.svg-dd472b1dd541ce12b56c3a7d3f73da36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tile 3W (1).png"
-dest_files=["res://.godot/imported/Tile 3W (1).png-48c702c946b67c99c3f11c6d9e22463f.ctex"]
+source_file="res://Assets/GridTiles/Tilemap.svg"
+dest_files=["res://.godot/imported/Tilemap.svg-dd472b1dd541ce12b56c3a7d3f73da36.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

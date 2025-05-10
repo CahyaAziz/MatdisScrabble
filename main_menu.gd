@@ -1,13 +1,7 @@
 extends Control
-func _ready():
-	pass
-
-func _proces(delta):
-	pass
-	
 
 func _on_start_pressed() -> void:
-	print ("Start pressed")
+	get_tree().change_scene_to_file("res://game.tscn")
 
 
 func _on_setting_pressed() -> void:

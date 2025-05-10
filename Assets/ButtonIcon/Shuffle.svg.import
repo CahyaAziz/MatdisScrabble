@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bli774rk3xlad"
-path="res://.godot/imported/Papan Board (2).png-03ad05a882cbadca553ddb589a001f4e.ctex"
+uid="uid://bvh0x3bso4t6y"
+path="res://.godot/imported/Shuffle.svg-7335031961ae46cba3fd559934ea9165.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Papan Board (2).png"
-dest_files=["res://.godot/imported/Papan Board (2).png-03ad05a882cbadca553ddb589a001f4e.ctex"]
+source_file="res://Assets/ButtonIcon/Shuffle.svg"
+dest_files=["res://.godot/imported/Shuffle.svg-7335031961ae46cba3fd559934ea9165.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
