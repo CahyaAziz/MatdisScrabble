@@ -6,9 +6,11 @@ const collision_mask_slot = 2
 var tile_drag
 var screen_size
 var is_hovering_on_tile
+var player_hand_ref
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
+	player_hand_ref = $"../PlayerHand"
 
 func _process(delta: float) -> void:
 	if tile_drag:
@@ -42,12 +44,12 @@ func finish_drag():
 
 	# Snap to new slot if it's free
 	if new_slot and not new_slot.is_occupied():
+		player_hand_ref.remove_tile_hand(tile_drag)
 		tile_drag.position = new_slot.position
 		new_slot.assign_tile(tile_drag)
 		tile_drag.current_slot = new_slot
 	else:
-		# Optionally: return to original position if not snapped
-		pass
+		player_hand_ref.add_tile_hand(tile_drag)
 
 	tile_drag = null
 	
