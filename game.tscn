@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://kxljhkmdhsjv"]
+[gd_scene load_steps=25 format=3 uid="uid://kxljhkmdhsjv"]
 
 [ext_resource type="Texture2D" uid="uid://t6rdxrbjqvds" path="res://Assets/GridTiles/Tilemap.svg" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://crwdyicmk0tkd" path="res://game.gd" id="1_vef74"]
 [ext_resource type="Texture2D" uid="uid://bnpi8dxkavuxt" path="res://Assets/ButtonIcon/Dot.svg" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bqa60uvwl6lh8" path="res://Assets/TileSets/scene/tile.tscn" id="2_eow3j"]
-[ext_resource type="Script" uid="uid://bw6oo82jvd5pu" path="res://tile_manager.gd" id="2_j5wjh"]
+[ext_resource type="Script" path="res://tile_manager.gd" id="2_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bvh0x3bso4t6y" path="res://Assets/ButtonIcon/Shuffle.svg" id="3_ryrav"]
 [ext_resource type="Texture2D" uid="uid://bualvgmqha822" path="res://Assets/ButtonIcon/Reset.svg" id="4_eow3j"]
 [ext_resource type="Texture2D" uid="uid://bmumk1dr22n44" path="res://Assets/ButtonIcon/Bag.svg" id="5_j5wjh"]
@@ -139,6 +140,8 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="Theme" id="Theme_vef74"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iotsf"]
 bg_color = Color(0.239216, 0.235294, 0.290196, 1)
 corner_radius_top_left = 10
@@ -147,6 +150,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="GameScene" type="Node2D"]
+script = ExtResource("1_vef74")
 
 [node name="TileManager" type="Node2D" parent="."]
 script = ExtResource("2_j5wjh")
@@ -444,19 +448,29 @@ theme_override_font_sizes/font_size = 36
 text = "00:00"
 vertical_alignment = 1
 
-[node name="Nama" type="Label" parent="TopUI/HBoxContainer2/Panel"]
+[node name="TextureRect" type="TextureRect" parent="TopUI/HBoxContainer2/Panel"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 14.0
+offset_right = 412.0
+offset_bottom = 68.0
+theme = SubResource("Theme_vef74")
+
+[node name="Nama" type="Label" parent="TopUI/HBoxContainer2/Panel/TextureRect"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 182.0
-offset_top = -25.0
-offset_right = 286.0
-offset_bottom = 25.0
+offset_left = 6.0
+offset_top = -26.0
+offset_right = 327.0
+offset_bottom = 27.0
 grow_vertical = 2
 theme_override_font_sizes/font_size = 36
-text = "Nama"
+horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 171
 
 [node name="LetterContainer" type="Panel" parent="."]
 z_index = -1
