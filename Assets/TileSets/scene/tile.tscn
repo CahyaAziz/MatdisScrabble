@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bqa60uvwl6lh8"]
 
 [ext_resource type="Texture2D" uid="uid://bdj3remu1c6o2" path="res://Assets/TileSets/Tile_A.svg" id="1_qkki0"]
-[ext_resource type="Script" uid="uid://8s7r6aaaqct5" path="res://Assets/TileSets/scene/tile.gd" id="1_xeufj"]
+[ext_resource type="Script" path="res://Assets/TileSets/scene/tile.gd" id="1_xeufj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xeufj"]
 size = Vector2(64, 64)
