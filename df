@@ -1,0 +1,94 @@
+[33mcommit 8cdae2a1dd99ae7209cd159efa050106b8c00eb8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Baalrmdhn <muhamadiqbalramadhan363@gmail.com>
+Date:   Sun May 11 17:20:13 2025 +0700
+
+    Menambahkan background music
+
+[33mcommit 326ff647dde7d1f16f67757dee88c6426be73d85[m
+Author: CahyaAziz <cahyaaziz2@gmail.com>
+Date:   Sat May 10 13:21:49 2025 +0700
+
+    Merge
+
+[33mcommit 071a272c8cadf92cc83ed578a7d22ca5b5ef3f9c[m
+Merge: d4e9804 20fabaf
+Author: CahyaAziz <cahyaaziz2@gmail.com>
+Date:   Sat May 10 13:17:36 2025 +0700
+
+    Merge branch 'main' of https://github.com/CahyaAziz/MatdisScrabble
+
+[33mcommit d4e9804454a76bbf552c60834438994c5a036666[m
+Author: CahyaAziz <cahyaaziz2@gmail.com>
+Date:   Sat May 10 13:14:03 2025 +0700
+
+    Draggable tile
+
+[33mcommit 20fabafd59ace5d79b4cac19952c5dcba43e0fdc[m
+Merge: 67425d9 651845b
+Author: CahyaAziz <64559304+CahyaAziz@users.noreply.github.com>
+Date:   Sat May 10 13:13:08 2025 +0700
+
+    Merge pull request #3 from IlyassaPutra-png/main
+    
+    setting
+
+[33mcommit 651845b32001e0aa2aac38e9d1a935f08cb99201[m
+Merge: 748eac0 67425d9
+Author: IlyassaPutra-png <ilyasputra6071@domain.com>
+Date:   Sat May 10 13:10:16 2025 +0700
+
+    setting
+
+[33mcommit 748eac0ce458f8b035aed0dd08633fe6637c669f[m
+Author: IlyassaPutra-png <ilyasputra6071@domain.com>
+Date:   Sat May 10 13:01:59 2025 +0700
+
+    setting
+
+[33mcommit 67425d99a25b517bae7888e1655537e5595d80f5[m
+Author: CahyaAziz <cahyaaziz2@gmail.com>
+Date:   Sat May 10 10:36:41 2025 +0700
+
+    game UI
+
+[33mcommit 90c24606898d0460c931b315aa5b60676eef5f51[m
+Author: CahyaAziz <cahyaaziz2@gmail.com>
+Date:   Sat May 10 09:37:57 2025 +0700
+
+    Add game scene, main grid
+
+[33mcommit fd008945725bc0e921171987a73617addbce7bb5[m
+Merge: b5f8e00 289de5e
+Author: CahyaAziz <64559304+CahyaAziz@users.noreply.github.com>
+Date:   Fri May 9 19:59:30 2025 +0700
+
+    Merge pull request #2 from IlyassaPutra-png/main
+    
+    menambakan menu
+
+[33mcommit 289de5e65c5dbc31d5a839a78d9f603561317718[m
+Author: IlyassaPutra-png <ilyasputra6071@domain.com>
+Date:   Fri May 9 19:19:26 2025 +0700
+
+    menambakan menu
+
+[33mcommit b5f8e001ba7df2aa604a3588e0f00041b9972e63[m
+Merge: 34ea239 628d012
+Author: CahyaAziz <64559304+CahyaAziz@users.noreply.github.com>
+Date:   Fri May 9 16:14:38 2025 +0700
+
+    Merge pull request #1 from IlyassaPutra-png/main
+    
+    asset
+
+[33mcommit 628d012007c4a65c3826d6eb46a438b817caec4b[m
+Author: IlyassaPutra-png <ilyasputra6071@domain.com>
+Date:   Fri May 9 16:13:09 2025 +0700
+
+    asset
+
+[33mcommit 34ea239bc260f8bb571b9abc241aa2d896684b7a[m
+Author: CahyaAziz <64559304+CahyaAziz@users.noreply.github.com>
+Date:   Fri May 2 13:21:23 2025 +0700
+
+    Initial commit
