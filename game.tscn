@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://crwdyicmk0tkd" path="res://game.gd" id="1_vef74"]
 [ext_resource type="Texture2D" uid="uid://bnpi8dxkavuxt" path="res://Assets/ButtonIcon/Dot.svg" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bqa60uvwl6lh8" path="res://Assets/TileSets/scene/tile.tscn" id="2_eow3j"]
-[ext_resource type="Script" path="res://tile_manager.gd" id="2_j5wjh"]
+[ext_resource type="Script" uid="uid://bw6oo82jvd5pu" path="res://tile_manager.gd" id="2_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bvh0x3bso4t6y" path="res://Assets/ButtonIcon/Shuffle.svg" id="3_ryrav"]
 [ext_resource type="Texture2D" uid="uid://bualvgmqha822" path="res://Assets/ButtonIcon/Reset.svg" id="4_eow3j"]
 [ext_resource type="Texture2D" uid="uid://bmumk1dr22n44" path="res://Assets/ButtonIcon/Bag.svg" id="5_j5wjh"]
@@ -156,25 +156,25 @@ script = ExtResource("1_vef74")
 script = ExtResource("2_j5wjh")
 
 [node name="Tile" parent="TileManager" instance=ExtResource("2_eow3j")]
-position = Vector2(1249, 1289)
+position = Vector2(273, 56)
 
 [node name="Tile2" parent="TileManager" instance=ExtResource("2_eow3j")]
-position = Vector2(1319, 1289)
+position = Vector2(343, 56)
 
 [node name="Tile3" parent="TileManager" instance=ExtResource("2_eow3j")]
-position = Vector2(1107, 1289)
+position = Vector2(131, 56)
 
 [node name="Tile4" parent="TileManager" instance=ExtResource("2_eow3j")]
-position = Vector2(1177, 1289)
+position = Vector2(201, 56)
 
 [node name="Tile5" parent="TileManager" instance=ExtResource("2_eow3j")]
-position = Vector2(1389, 1289)
+position = Vector2(413, 56)
 
 [node name="Tile6" parent="TileManager" instance=ExtResource("2_eow3j")]
-position = Vector2(1459, 1289)
+position = Vector2(483, 56)
 
 [node name="Tile7" parent="TileManager" instance=ExtResource("2_eow3j")]
-position = Vector2(1035, 1289)
+position = Vector2(59, 56)
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = -1
@@ -479,3 +479,5 @@ offset_top = 1245.0
 offset_right = 1732.0
 offset_bottom = 1337.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_iotsf")
+
+[node name="tileslot" type="Node2D" parent="."]

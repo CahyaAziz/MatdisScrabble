@@ -28,7 +28,6 @@ func _on_start_pressed() -> void:
 	main_button.visible = false
 	mulai_menu.visible = true
 
-
 func _on_setting_pressed() -> void:
 	print ("Setting_pressed")
 	main_button.visible = false

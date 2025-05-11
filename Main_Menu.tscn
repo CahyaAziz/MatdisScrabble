@@ -85,10 +85,9 @@ layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 9.0
-offset_top = -1450.0
-offset_right = 2592.0
-offset_bottom = 3.0
+offset_top = -1455.0
+offset_right = 2583.0
+offset_bottom = -2.0
 grow_vertical = 0
 script = ExtResource("1_gtid3")
 
