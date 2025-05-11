@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://kxljhkmdhsjv"]
 
 [ext_resource type="Texture2D" uid="uid://t6rdxrbjqvds" path="res://Assets/GridTiles/Tilemap.svg" id="1_80nbo"]
-[ext_resource type="Script" path="res://game.gd" id="1_vef74"]
+[ext_resource type="Script" uid="uid://crwdyicmk0tkd" path="res://game.gd" id="1_vef74"]
 [ext_resource type="Texture2D" uid="uid://bnpi8dxkavuxt" path="res://Assets/ButtonIcon/Dot.svg" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bqa60uvwl6lh8" path="res://Assets/TileSets/scene/tile.tscn" id="2_eow3j"]
 [ext_resource type="Script" uid="uid://bw6oo82jvd5pu" path="res://tile_manager.gd" id="2_j5wjh"]
