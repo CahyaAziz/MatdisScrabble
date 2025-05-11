@@ -9,7 +9,7 @@ func _Mulai():
 
 func _on_mulai_pressed():
 	Global.username = line_edit.text
-	get_tree().change_scene_to_file("res://game.tscn")
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _process(delta):
 	pass
@@ -39,7 +39,7 @@ func _on_exit_pressed() -> void:
 
 
 func _on_back_options_pressed() -> void:
-	_ready()
+	go_menu()
 
 
 func _on_music_value_changed(value: float) -> void:

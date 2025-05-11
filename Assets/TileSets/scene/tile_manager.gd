@@ -32,9 +32,23 @@ func start_drag(tile):
 
 func finish_drag():
 	tile_drag.scale = Vector2(1.05, 1.05)
-	var tile_slot_found = raycast_check_slot()
-	if tile_slot_found and not tile_slot_found.tile_in_slot:
-		tile_drag.position = tile_slot_found.position
+
+	var new_slot = raycast_check_slot()
+
+	# If we were in a previous slot, free it
+	if tile_drag.current_slot and is_instance_valid(tile_drag.current_slot):
+		tile_drag.current_slot.remove_tile()
+		tile_drag.current_slot = null
+
+	# Snap to new slot if it's free
+	if new_slot and not new_slot.is_occupied():
+		tile_drag.position = new_slot.position
+		new_slot.assign_tile(tile_drag)
+		tile_drag.current_slot = new_slot
+	else:
+		# Optionally: return to original position if not snapped
+		pass
+
 	tile_drag = null
 	
 

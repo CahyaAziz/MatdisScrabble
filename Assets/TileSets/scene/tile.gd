@@ -3,6 +3,8 @@ extends Node2D
 signal hovered
 signal hovered_off
 
+var current_slot = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_parent().connect_tile_signal(self)

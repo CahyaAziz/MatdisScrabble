@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bo3md2y6ajh3q"]
 
-[ext_resource type="Script" uid="uid://dbjk6oa4kktbf" path="res://tile_slot.gd" id="1_rhwss"]
+[ext_resource type="Script" uid="uid://dbjk6oa4kktbf" path="res://Assets/TileSets/scene/tile_slot.gd" id="1_rhwss"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v18n0"]
 size = Vector2(64, 64)
