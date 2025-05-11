@@ -25,3 +25,7 @@ func _on_exit_pressed() -> void:
 
 func _on_back_options_pressed() -> void:
 	_ready()
+
+
+func _on_music_value_changed(value: float) -> void:
+	pass # Replace with function body.
