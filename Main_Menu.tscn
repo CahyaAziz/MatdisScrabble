@@ -1,10 +1,15 @@
+<<<<<<< HEAD
+[gd_scene load_steps=16 format=3 uid="uid://cj26m1ltri7sf"]
+=======
 [gd_scene load_steps=24 format=3 uid="uid://cj26m1ltri7sf"]
+>>>>>>> 1a70257dc7e051f08009b12d79c9a0d1a1152b04
 
 [ext_resource type="Script" uid="uid://bl25ombvodojc" path="res://main_menu.gd" id="1_gtid3"]
 [ext_resource type="Texture2D" uid="uid://mddu2d1somlh" path="res://Assets/GridTiles/Frame 979.png" id="1_wugcc"]
 [ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="2_gtid3"]
 [ext_resource type="Script" uid="uid://syow0uu01wa1" path="res://audio_control.gd" id="4_dnfjo"]
 [ext_resource type="Script" uid="uid://jf1sted30gtr" path="res://sfx.gd" id="5_3mro0"]
+[ext_resource type="AudioStream" uid="uid://cs1jxlt73ron3" path="res://Scrabble Music - Scrabble 1.mp3" id="6_5cvai"]
 [ext_resource type="Script" uid="uid://dg4w2exky2eud" path="res://audio_stream_player_2.gd" id="6_tu7k8"]
 [ext_resource type="Texture2D" uid="uid://daf8lnnilrqjc" path="res://Assets/ButtonIcon/Rectangle 144 (1).png" id="7_5cvai"]
 [ext_resource type="Script" uid="uid://d3nxu7dlceyst" path="res://mulai_menu.gd" id="7_domf7"]
@@ -259,18 +264,17 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Music Volume"
 
-[node name="AudioControl" type="HSlider" parent="Options/VBoxContainer/HBoxContainer"]
+[node name="Music" type="HSlider" parent="Options/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_styles/slider = SubResource("StyleBoxLine_gtid3")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_dnfjo")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_257up")
-max_value = 1.0
-step = 0.05
+max_value = 1.5
+step = 0.001
 value = 1.0
 script = ExtResource("4_dnfjo")
-audio_bus_name = "Music"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Options/VBoxContainer"]
 layout_mode = 2
@@ -292,9 +296,10 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 script = ExtResource("5_3mro0")
-audio_bus_name = "SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_5cvai")
+autoplay = true
 script = ExtResource("6_tu7k8")
 
 [node name="Mulai_menu" type="Panel" parent="."]
@@ -391,7 +396,10 @@ caret_blink_interval = 0.34
 [connection signal="pressed" from="MainButton/Option" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="MainButton/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_options_pressed"]
-[connection signal="value_changed" from="Options/VBoxContainer/HBoxContainer/AudioControl" to="Options/VBoxContainer/HBoxContainer/AudioControl" method="_on_value_changed"]
+[connection signal="mouse_exited" from="Options/VBoxContainer/HBoxContainer/Music" to="Options/VBoxContainer/HBoxContainer/Music" method="_on_mouse_exited"]
+[connection signal="value_changed" from="Options/VBoxContainer/HBoxContainer/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="Options/VBoxContainer/HBoxContainer/Music" to="Options/VBoxContainer/HBoxContainer/Music" method="_on_value_changed"]
+[connection signal="mouse_exited" from="Options/VBoxContainer/HBoxContainer3/SFX" to="Options/VBoxContainer/HBoxContainer3/SFX" method="_on_mouse_exited"]
 [connection signal="value_changed" from="Options/VBoxContainer/HBoxContainer3/SFX" to="Options/VBoxContainer/HBoxContainer3/SFX" method="_on_value_changed"]
 [connection signal="pressed" from="Mulai_menu/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Mulai_menu/Mulai" to="." method="_on_mulai_pressed"]
