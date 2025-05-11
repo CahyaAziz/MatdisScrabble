@@ -438,20 +438,6 @@ texture = ExtResource("6_ryrav")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TimeValue" type="Label" parent="TopUI/HBoxContainer2/Panel"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 630.0
-offset_top = -25.0
-offset_right = 734.0
-offset_bottom = 25.0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 36
-text = "00:00"
-vertical_alignment = 1
-
 [node name="TextureRect" type="TextureRect" parent="TopUI/HBoxContainer2/Panel"]
 layout_mode = 0
 offset_left = 82.0
@@ -483,3 +469,23 @@ offset_top = 1245.0
 offset_right = 1732.0
 offset_bottom = 1337.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_iotsf")
+
+[node name="tileslot" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1404.0
+offset_top = 38.0
+offset_right = 1536.0
+offset_bottom = 88.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "10:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
