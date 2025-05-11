@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo3md2y6ajh3q"]
+
+[ext_resource type="Script" uid="uid://dbjk6oa4kktbf" path="res://tile_slot.gd" id="1_rhwss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v18n0"]
+size = Vector2(64, 64)
+
+[node name="TileSlot" type="Node2D"]
+script = ExtResource("1_rhwss")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_v18n0")

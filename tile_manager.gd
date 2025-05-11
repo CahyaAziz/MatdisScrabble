@@ -1,6 +1,7 @@
 extends Node2D
 
 const collision_mask_tile = 1
+const collision_mask_slot = 2
 
 var tile_drag
 var screen_size
@@ -31,6 +32,9 @@ func start_drag(tile):
 
 func finish_drag():
 	tile_drag.scale = Vector2(1.05, 1.05)
+	var tile_slot_found = raycast_check_slot()
+	if tile_slot_found and not tile_slot_found.tile_in_slot:
+		tile_drag.position = tile_slot_found.position
 	tile_drag = null
 	
 
@@ -60,6 +64,17 @@ func highlight_tile(tile, hovered):
 	else:
 		tile.scale = Vector2(1, 1)
 		tile.z_index = 1
+
+func raycast_check_slot():
+	var space_state = get_world_2d().direct_space_state
+	var parameters = PhysicsPointQueryParameters2D.new()
+	parameters.position = get_global_mouse_position()
+	parameters.collide_with_areas = true
+	parameters.collision_mask = collision_mask_slot
+	var result = space_state.intersect_point(parameters)
+	if result.size() > 0:
+		return result[0].collider.get_parent()
+	return null
 
 func raycast_check():
 	var space_state = get_world_2d().direct_space_state
