@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://kxljhkmdhsjv"]
+[gd_scene load_steps=27 format=3 uid="uid://kxljhkmdhsjv"]
 
 [ext_resource type="Texture2D" uid="uid://t6rdxrbjqvds" path="res://Assets/GridTiles/Tilemap.svg" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://crwdyicmk0tkd" path="res://scripts/game.gd" id="1_vef74"]
@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bualvgmqha822" path="res://Assets/ButtonIcon/Reset.svg" id="4_eow3j"]
 [ext_resource type="PackedScene" uid="uid://bo3md2y6ajh3q" path="res://Assets/TileSets/scene/tile_slot.tscn" id="5_hve3p"]
 [ext_resource type="Texture2D" uid="uid://bmumk1dr22n44" path="res://Assets/ButtonIcon/Bag.svg" id="5_j5wjh"]
-[ext_resource type="Script" uid="uid://bws1rjijysee5" path="res://player_hand.gd" id="5_vtaks"]
+[ext_resource type="Script" uid="uid://bws1rjijysee5" path="res://Assets/TileSets/scene/player_hand.gd" id="5_vtaks"]
+[ext_resource type="Script" uid="uid://ciwonlsjaoqml" path="res://Assets/TileSets/bag.gd" id="6_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://bciwqel88673n" path="res://Assets/ButtonIcon/Bar.svg" id="6_ryrav"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
@@ -165,7 +166,7 @@ z_index = -1
 position = Vector2(813, 402)
 tile_set = SubResource("TileSet_feb5d")
 format = 2
-layer_0/tile_data = PackedInt32Array(-131072, 458753, 2, -65536, 655361, 2, 0, 655361, 2, 65536, 327681, 2, 131072, 655361, 2, 196608, 655361, 2, 262144, 655361, 2, 327680, 458753, 2, 393216, 655361, 2, 458752, 655361, 2, 524288, 655361, 2, 589824, 327681, 2, 655360, 655361, 2, 720896, 655361, 2, 786432, 458753, 2, -131071, 655361, 2, -65535, 393217, 2, 1, 655361, 2, 65537, 655361, 2, 131073, 655361, 2, 196609, 524289, 2, 262145, 655361, 2, 327681, 655361, 2, 393217, 655361, 2, 458753, 524289, 2, 524289, 655361, 2, 589825, 655361, 2, 655361, 655361, 2, 720897, 393217, 2, 786433, 655361, 2, -131070, 655361, 2, -65534, 655361, 2, 2, 393217, 2, 65538, 655361, 2, 131074, 655361, 2, 196610, 655361, 2, 262146, 327681, 2, 327682, 655361, 2, 393218, 327681, 2, 458754, 655361, 2, 524290, 655361, 2, 589826, 655361, 2, 655362, 393217, 2, 720898, 655361, 2, 786434, 655361, 2, -131069, 262145, 0, -65533, 655361, 2, 3, 655361, 2, 65539, 393217, 2, 131075, 655361, 2, 196611, 655361, 2, 262147, 655361, 2, 327683, 327681, 2, 393219, 655361, 2, 458755, 655361, 2, 524291, 655361, 2, 589827, 393217, 2, 655363, 655361, 2, 720899, 655361, 2, 786435, 327681, 2, -131068, 655361, 2, -65532, 655361, 2, 4, 655361, 2, 65540, 655361, 2, 131076, 393217, 2, 196612, 655361, 2, 262148, 655361, 2, 327684, 655361, 2, 393220, 655361, 2, 458756, 655361, 2, 524292, 393217, 2, 589828, 655361, 2, 655364, 655361, 2, 720900, 655361, 2, 786436, 655361, 2, -131067, 655361, 2, -65531, 524289, 2, 5, 655361, 2, 65541, 655361, 2, 131077, 655361, 2, 196613, 524289, 2, 262149, 655361, 2, 327685, 655361, 2, 393221, 655361, 2, 458757, 524289, 2, 524293, 655361, 2, 589829, 655361, 2, 655365, 655361, 2, 720901, 524289, 2, 786437, 655361, 2, -131066, 655361, 2, -65530, 655361, 2, 6, 327681, 2, 65542, 655361, 2, 131078, 655361, 2, 196614, 655361, 2, 262150, 327681, 2, 327686, 655361, 2, 393222, 327681, 2, 458758, 655361, 2, 524294, 655361, 2, 589830, 655361, 2, 655366, 327681, 2, 720902, 655361, 2, 786438, 655361, 2, -131065, 458753, 2, -65529, 655361, 2, 7, 655361, 2, 65543, 327681, 2, 131079, 655361, 2, 196615, 655361, 2, 262151, 655361, 2, 327687, 589825, 2, 393223, 655361, 2, 458759, 655361, 2, 524295, 655361, 2, 589831, 327681, 2, 655367, 655361, 2, 720903, 655361, 2, 786439, 458753, 2, -131064, 655361, 2, -65528, 655361, 2, 8, 327681, 2, 65544, 655361, 2, 131080, 655361, 2, 196616, 655361, 2, 262152, 327681, 2, 327688, 655361, 2, 393224, 327681, 2, 458760, 655361, 2, 524296, 655361, 2, 589832, 655361, 2, 655368, 327681, 2, 720904, 655361, 2, 786440, 655361, 2, -131063, 655361, 2, -65527, 524289, 2, 9, 655361, 2, 65545, 655361, 2, 131081, 655361, 2, 196617, 524289, 2, 262153, 655361, 2, 327689, 655361, 2, 393225, 655361, 2, 458761, 524289, 2, 524297, 655361, 2, 589833, 655361, 2, 655369, 655361, 2, 720905, 524289, 2, 786441, 655361, 2, -131062, 655361, 2, -65526, 655361, 2, 10, 655361, 2, 65546, 655361, 2, 131082, 393217, 2, 196618, 655361, 2, 262154, 655361, 2, 327690, 655361, 2, 393226, 655361, 2, 458762, 655361, 2, 524298, 393217, 2, 589834, 655361, 2, 655370, 655361, 2, 720906, 655361, 2, 786442, 655361, 2, -131061, 327681, 2, -65525, 655361, 2, 11, 655361, 2, 65547, 393217, 2, 131083, 655361, 2, 196619, 655361, 2, 262155, 655361, 2, 327691, 327681, 2, 393227, 655361, 2, 458763, 655361, 2, 524299, 655361, 2, 589835, 393217, 2, 655371, 655361, 2, 720907, 655361, 2, 786443, 327681, 2, -131060, 655361, 2, -65524, 655361, 2, 12, 393217, 2, 65548, 655361, 2, 131084, 655361, 2, 196620, 655361, 2, 262156, 327681, 2, 327692, 655361, 2, 393228, 327681, 2, 458764, 655361, 2, 524300, 655361, 2, 589836, 655361, 2, 655372, 393217, 2, 720908, 655361, 2, 786444, 655361, 2, -131059, 655361, 2, -65523, 393217, 2, 13, 655361, 2, 65549, 655361, 2, 131085, 655361, 2, 196621, 524289, 2, 262157, 655361, 2, 327693, 655361, 2, 393229, 655361, 2, 458765, 524289, 2, 524301, 655361, 2, 589837, 655361, 2, 655373, 655361, 2, 720909, 393217, 2, 786445, 655361, 2, -131058, 458753, 2, -65522, 655361, 2, 14, 655361, 2, 65550, 327681, 2, 131086, 655361, 2, 196622, 655361, 2, 262158, 655361, 2, 327694, 458753, 2, 393230, 655361, 2, 458766, 655361, 2, 524302, 655361, 2, 589838, 327681, 2, 655374, 655361, 2, 720910, 655361, 2, 786446, 458753, 2)
+layer_0/tile_data = PackedInt32Array(-131072, 458753, 2, -65536, 655361, 2, 0, 655361, 2, 65536, 327681, 2, 131072, 655361, 2, 196608, 655361, 2, 262144, 655361, 2, 327680, 458753, 2, 393216, 655361, 2, 458752, 655361, 2, 524288, 655361, 2, 589824, 327681, 2, 655360, 655361, 2, 720896, 655361, 2, 786432, 458753, 2, -131071, 655361, 2, -65535, 393217, 2, 1, 655361, 2, 65537, 655361, 2, 131073, 655361, 2, 196609, 524289, 2, 262145, 655361, 2, 327681, 655361, 2, 393217, 655361, 2, 458753, 524289, 2, 524289, 655361, 2, 589825, 655361, 2, 655361, 655361, 2, 720897, 393217, 2, 786433, 655361, 2, -131070, 655361, 2, -65534, 655361, 2, 2, 393217, 2, 65538, 655361, 2, 131074, 655361, 2, 196610, 655361, 2, 262146, 327681, 2, 327682, 655361, 2, 393218, 327681, 2, 458754, 655361, 2, 524290, 655361, 2, 589826, 655361, 2, 655362, 393217, 2, 720898, 655361, 2, 786434, 655361, 2, -131069, 327681, 2, -65533, 655361, 2, 3, 655361, 2, 65539, 393217, 2, 131075, 655361, 2, 196611, 655361, 2, 262147, 655361, 2, 327683, 327681, 2, 393219, 655361, 2, 458755, 655361, 2, 524291, 655361, 2, 589827, 393217, 2, 655363, 655361, 2, 720899, 655361, 2, 786435, 327681, 2, -131068, 655361, 2, -65532, 655361, 2, 4, 655361, 2, 65540, 655361, 2, 131076, 393217, 2, 196612, 655361, 2, 262148, 655361, 2, 327684, 655361, 2, 393220, 655361, 2, 458756, 655361, 2, 524292, 393217, 2, 589828, 655361, 2, 655364, 655361, 2, 720900, 655361, 2, 786436, 655361, 2, -131067, 655361, 2, -65531, 524289, 2, 5, 655361, 2, 65541, 655361, 2, 131077, 655361, 2, 196613, 524289, 2, 262149, 655361, 2, 327685, 655361, 2, 393221, 655361, 2, 458757, 524289, 2, 524293, 655361, 2, 589829, 655361, 2, 655365, 655361, 2, 720901, 524289, 2, 786437, 655361, 2, -131066, 655361, 2, -65530, 655361, 2, 6, 327681, 2, 65542, 655361, 2, 131078, 655361, 2, 196614, 655361, 2, 262150, 327681, 2, 327686, 655361, 2, 393222, 327681, 2, 458758, 655361, 2, 524294, 655361, 2, 589830, 655361, 2, 655366, 327681, 2, 720902, 655361, 2, 786438, 655361, 2, -131065, 458753, 2, -65529, 655361, 2, 7, 655361, 2, 65543, 327681, 2, 131079, 655361, 2, 196615, 655361, 2, 262151, 655361, 2, 327687, 589825, 2, 393223, 655361, 2, 458759, 655361, 2, 524295, 655361, 2, 589831, 327681, 2, 655367, 655361, 2, 720903, 655361, 2, 786439, 458753, 2, -131064, 655361, 2, -65528, 655361, 2, 8, 327681, 2, 65544, 655361, 2, 131080, 655361, 2, 196616, 655361, 2, 262152, 327681, 2, 327688, 655361, 2, 393224, 327681, 2, 458760, 655361, 2, 524296, 655361, 2, 589832, 655361, 2, 655368, 327681, 2, 720904, 655361, 2, 786440, 655361, 2, -131063, 655361, 2, -65527, 524289, 2, 9, 655361, 2, 65545, 655361, 2, 131081, 655361, 2, 196617, 524289, 2, 262153, 655361, 2, 327689, 655361, 2, 393225, 655361, 2, 458761, 524289, 2, 524297, 655361, 2, 589833, 655361, 2, 655369, 655361, 2, 720905, 524289, 2, 786441, 655361, 2, -131062, 655361, 2, -65526, 655361, 2, 10, 655361, 2, 65546, 655361, 2, 131082, 393217, 2, 196618, 655361, 2, 262154, 655361, 2, 327690, 655361, 2, 393226, 655361, 2, 458762, 655361, 2, 524298, 393217, 2, 589834, 655361, 2, 655370, 655361, 2, 720906, 655361, 2, 786442, 655361, 2, -131061, 327681, 2, -65525, 655361, 2, 11, 655361, 2, 65547, 393217, 2, 131083, 655361, 2, 196619, 655361, 2, 262155, 655361, 2, 327691, 327681, 2, 393227, 655361, 2, 458763, 655361, 2, 524299, 655361, 2, 589835, 393217, 2, 655371, 655361, 2, 720907, 655361, 2, 786443, 327681, 2, -131060, 655361, 2, -65524, 655361, 2, 12, 393217, 2, 65548, 655361, 2, 131084, 655361, 2, 196620, 655361, 2, 262156, 327681, 2, 327692, 655361, 2, 393228, 327681, 2, 458764, 655361, 2, 524300, 655361, 2, 589836, 655361, 2, 655372, 393217, 2, 720908, 655361, 2, 786444, 655361, 2, -131059, 655361, 2, -65523, 393217, 2, 13, 655361, 2, 65549, 655361, 2, 131085, 655361, 2, 196621, 524289, 2, 262157, 655361, 2, 327693, 655361, 2, 393229, 655361, 2, 458765, 524289, 2, 524301, 655361, 2, 589837, 655361, 2, 655373, 655361, 2, 720909, 393217, 2, 786445, 655361, 2, -131058, 458753, 2, -65522, 655361, 2, 14, 655361, 2, 65550, 327681, 2, 131086, 655361, 2, 196622, 655361, 2, 262158, 655361, 2, 327694, 458753, 2, 393230, 655361, 2, 458766, 655361, 2, 524302, 655361, 2, 589838, 327681, 2, 655374, 655361, 2, 720910, 655361, 2, 786446, 458753, 2)
 
 [node name="TileSlot" parent="." instance=ExtResource("5_hve3p")]
 position = Vector2(845, 306)
@@ -178,6 +179,672 @@ position = Vector2(973, 306)
 
 [node name="TileSlot4" parent="." instance=ExtResource("5_hve3p")]
 position = Vector2(1037, 306)
+
+[node name="TileSlot5" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 306)
+
+[node name="TileSlot6" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 306)
+
+[node name="TileSlot7" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 306)
+
+[node name="TileSlot8" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 306)
+
+[node name="TileSlot9" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 306)
+
+[node name="TileSlot10" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 306)
+
+[node name="TileSlot11" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 306)
+
+[node name="TileSlot12" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 306)
+
+[node name="TileSlot13" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 306)
+
+[node name="TileSlot14" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 306)
+
+[node name="TileSlot15" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 306)
+
+[node name="TileSlot16" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 370)
+
+[node name="TileSlot17" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 370)
+
+[node name="TileSlot18" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 370)
+
+[node name="TileSlot19" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 370)
+
+[node name="TileSlot20" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 370)
+
+[node name="TileSlot21" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 370)
+
+[node name="TileSlot22" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 370)
+
+[node name="TileSlot23" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 370)
+
+[node name="TileSlot24" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 370)
+
+[node name="TileSlot25" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 370)
+
+[node name="TileSlot26" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 370)
+
+[node name="TileSlot27" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 370)
+
+[node name="TileSlot28" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 370)
+
+[node name="TileSlot29" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 370)
+
+[node name="TileSlot30" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 370)
+
+[node name="TileSlot31" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 434)
+
+[node name="TileSlot32" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 434)
+
+[node name="TileSlot33" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 434)
+
+[node name="TileSlot34" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 434)
+
+[node name="TileSlot35" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 434)
+
+[node name="TileSlot36" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 434)
+
+[node name="TileSlot37" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 434)
+
+[node name="TileSlot38" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 434)
+
+[node name="TileSlot39" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 434)
+
+[node name="TileSlot40" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 434)
+
+[node name="TileSlot41" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 434)
+
+[node name="TileSlot42" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 434)
+
+[node name="TileSlot43" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 434)
+
+[node name="TileSlot44" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 434)
+
+[node name="TileSlot45" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 434)
+
+[node name="TileSlot46" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 498)
+
+[node name="TileSlot47" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 498)
+
+[node name="TileSlot48" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 498)
+
+[node name="TileSlot49" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 498)
+
+[node name="TileSlot50" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 498)
+
+[node name="TileSlot51" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 498)
+
+[node name="TileSlot52" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 498)
+
+[node name="TileSlot53" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 498)
+
+[node name="TileSlot54" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 498)
+
+[node name="TileSlot55" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 498)
+
+[node name="TileSlot56" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 498)
+
+[node name="TileSlot57" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 498)
+
+[node name="TileSlot58" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 498)
+
+[node name="TileSlot59" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 498)
+
+[node name="TileSlot60" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 498)
+
+[node name="TileSlot61" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 562)
+
+[node name="TileSlot62" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 562)
+
+[node name="TileSlot63" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 562)
+
+[node name="TileSlot64" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 562)
+
+[node name="TileSlot65" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 562)
+
+[node name="TileSlot66" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 562)
+
+[node name="TileSlot67" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 562)
+
+[node name="TileSlot68" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 562)
+
+[node name="TileSlot69" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 562)
+
+[node name="TileSlot70" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 562)
+
+[node name="TileSlot71" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 562)
+
+[node name="TileSlot72" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 562)
+
+[node name="TileSlot73" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 562)
+
+[node name="TileSlot74" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 562)
+
+[node name="TileSlot75" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 562)
+
+[node name="TileSlot76" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 626)
+
+[node name="TileSlot77" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 626)
+
+[node name="TileSlot78" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 626)
+
+[node name="TileSlot79" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 626)
+
+[node name="TileSlot80" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 626)
+
+[node name="TileSlot81" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 626)
+
+[node name="TileSlot82" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 626)
+
+[node name="TileSlot83" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 626)
+
+[node name="TileSlot84" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 626)
+
+[node name="TileSlot85" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 626)
+
+[node name="TileSlot86" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 626)
+
+[node name="TileSlot87" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 626)
+
+[node name="TileSlot88" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 626)
+
+[node name="TileSlot89" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 626)
+
+[node name="TileSlot90" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 626)
+
+[node name="TileSlot91" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 690)
+
+[node name="TileSlot92" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 690)
+
+[node name="TileSlot93" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 690)
+
+[node name="TileSlot94" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 690)
+
+[node name="TileSlot95" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 690)
+
+[node name="TileSlot96" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 690)
+
+[node name="TileSlot97" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 690)
+
+[node name="TileSlot98" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 690)
+
+[node name="TileSlot99" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 690)
+
+[node name="TileSlot100" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 690)
+
+[node name="TileSlot101" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 690)
+
+[node name="TileSlot102" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 690)
+
+[node name="TileSlot103" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 690)
+
+[node name="TileSlot104" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 690)
+
+[node name="TileSlot105" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 690)
+
+[node name="TileSlot106" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 754)
+
+[node name="TileSlot107" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 754)
+
+[node name="TileSlot108" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 754)
+
+[node name="TileSlot109" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 754)
+
+[node name="TileSlot110" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 754)
+
+[node name="TileSlot111" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 754)
+
+[node name="TileSlot112" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 754)
+
+[node name="TileSlot113" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 754)
+
+[node name="TileSlot114" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 754)
+
+[node name="TileSlot115" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 754)
+
+[node name="TileSlot116" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 754)
+
+[node name="TileSlot117" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 754)
+
+[node name="TileSlot118" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 754)
+
+[node name="TileSlot119" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 754)
+
+[node name="TileSlot120" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 754)
+
+[node name="TileSlot121" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 818)
+
+[node name="TileSlot122" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 818)
+
+[node name="TileSlot123" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 818)
+
+[node name="TileSlot124" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 818)
+
+[node name="TileSlot125" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 818)
+
+[node name="TileSlot126" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 818)
+
+[node name="TileSlot127" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 818)
+
+[node name="TileSlot128" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 818)
+
+[node name="TileSlot129" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 818)
+
+[node name="TileSlot130" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 818)
+
+[node name="TileSlot131" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 818)
+
+[node name="TileSlot132" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 818)
+
+[node name="TileSlot133" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 818)
+
+[node name="TileSlot134" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 818)
+
+[node name="TileSlot135" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 818)
+
+[node name="TileSlot136" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 882)
+
+[node name="TileSlot137" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 882)
+
+[node name="TileSlot138" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 882)
+
+[node name="TileSlot139" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 882)
+
+[node name="TileSlot140" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 882)
+
+[node name="TileSlot141" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 882)
+
+[node name="TileSlot142" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 882)
+
+[node name="TileSlot143" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 882)
+
+[node name="TileSlot144" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 882)
+
+[node name="TileSlot145" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 882)
+
+[node name="TileSlot146" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 882)
+
+[node name="TileSlot147" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 882)
+
+[node name="TileSlot148" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 882)
+
+[node name="TileSlot149" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 882)
+
+[node name="TileSlot150" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 882)
+
+[node name="TileSlot151" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 946)
+
+[node name="TileSlot152" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 946)
+
+[node name="TileSlot153" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 946)
+
+[node name="TileSlot154" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 946)
+
+[node name="TileSlot155" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 946)
+
+[node name="TileSlot156" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 946)
+
+[node name="TileSlot157" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 946)
+
+[node name="TileSlot158" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 946)
+
+[node name="TileSlot159" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 946)
+
+[node name="TileSlot160" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 946)
+
+[node name="TileSlot161" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 946)
+
+[node name="TileSlot162" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 946)
+
+[node name="TileSlot163" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 946)
+
+[node name="TileSlot164" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 946)
+
+[node name="TileSlot165" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 946)
+
+[node name="TileSlot166" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 1010)
+
+[node name="TileSlot167" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 1010)
+
+[node name="TileSlot168" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 1010)
+
+[node name="TileSlot169" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 1010)
+
+[node name="TileSlot170" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 1010)
+
+[node name="TileSlot171" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 1010)
+
+[node name="TileSlot172" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 1010)
+
+[node name="TileSlot173" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 1010)
+
+[node name="TileSlot174" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 1010)
+
+[node name="TileSlot175" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 1010)
+
+[node name="TileSlot176" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 1010)
+
+[node name="TileSlot177" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 1010)
+
+[node name="TileSlot178" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 1010)
+
+[node name="TileSlot179" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 1010)
+
+[node name="TileSlot180" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 1010)
+
+[node name="TileSlot181" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 1074)
+
+[node name="TileSlot182" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 1074)
+
+[node name="TileSlot183" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 1074)
+
+[node name="TileSlot184" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 1074)
+
+[node name="TileSlot185" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 1074)
+
+[node name="TileSlot186" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 1074)
+
+[node name="TileSlot187" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 1074)
+
+[node name="TileSlot188" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 1074)
+
+[node name="TileSlot189" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 1074)
+
+[node name="TileSlot190" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 1074)
+
+[node name="TileSlot191" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 1074)
+
+[node name="TileSlot192" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 1074)
+
+[node name="TileSlot193" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 1074)
+
+[node name="TileSlot194" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 1074)
+
+[node name="TileSlot195" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 1074)
+
+[node name="TileSlot196" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 1138)
+
+[node name="TileSlot197" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 1138)
+
+[node name="TileSlot198" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 1138)
+
+[node name="TileSlot199" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 1138)
+
+[node name="TileSlot200" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 1138)
+
+[node name="TileSlot201" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 1138)
+
+[node name="TileSlot202" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 1138)
+
+[node name="TileSlot203" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 1138)
+
+[node name="TileSlot204" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 1138)
+
+[node name="TileSlot205" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 1138)
+
+[node name="TileSlot206" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 1138)
+
+[node name="TileSlot207" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 1138)
+
+[node name="TileSlot208" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 1138)
+
+[node name="TileSlot209" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 1138)
+
+[node name="TileSlot210" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 1138)
+
+[node name="TileSlot211" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(845, 1202)
+
+[node name="TileSlot212" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(909, 1202)
+
+[node name="TileSlot213" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(973, 1202)
+
+[node name="TileSlot214" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1037, 1202)
+
+[node name="TileSlot215" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1101, 1202)
+
+[node name="TileSlot216" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1165, 1202)
+
+[node name="TileSlot217" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1229, 1202)
+
+[node name="TileSlot218" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1293, 1202)
+
+[node name="TileSlot219" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1357, 1202)
+
+[node name="TileSlot220" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1421, 1202)
+
+[node name="TileSlot221" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1485, 1202)
+
+[node name="TileSlot222" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1549, 1202)
+
+[node name="TileSlot223" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1613, 1202)
+
+[node name="TileSlot224" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1677, 1202)
+
+[node name="TileSlot225" parent="." instance=ExtResource("5_hve3p")]
+position = Vector2(1740, 1202)
+
+[node name="Bag" type="Node2D" parent="."]
+script = ExtResource("6_kvpfn")
 
 [node name="GameplayButton" type="Control" parent="."]
 z_index = -1
@@ -464,8 +1131,6 @@ offset_right = 1774.0
 offset_bottom = 1337.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_iotsf")
 
-[node name="tileslot" type="Node2D" parent="."]
-
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Label" type="Label" parent="."]
@@ -482,4 +1147,5 @@ text = "10:00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="GameplayButton/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
