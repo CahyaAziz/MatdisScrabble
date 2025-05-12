@@ -23,9 +23,8 @@ func go_menu():
 	mulai_menu.visible = false
 
 func _on_start_pressed() -> void:
-	print ("Login_pressed")
-	main_button.visible = false
-	mulai_menu.visible = true
+	get_tree().change_scene_to_file("res://game.tscn")
+
 
 
 func _on_setting_pressed() -> void:
