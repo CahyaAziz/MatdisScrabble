@@ -3,19 +3,27 @@ extends Control
 @onready var options: Panel = $Options
 @onready var mulai_menu: Panel = $Mulai_menu
 @onready var line_edit = get_node("Mulai_menu/TextureRect/LineEdit")
+@onready var warning_label: Label = $Mulai_menu/TextureRect/LineEdit/warning_label
 
 func _Mulai():
 	line_edit.grab_focus()
 
 func _on_mulai_pressed():
-	Global.username = line_edit.text
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	var input_nama = line_edit.text.strip_edges()
+	if input_nama == "":
+		warning_label.text = "Masukkan nama terlebih dahulu!"
+		warning_label.visible = true
+	else:
+		Global.username = input_nama
+		get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func _process(delta):
 	pass
+func _on_nama_changed(new_text: String):
+	warning_label.visible = false
 
-func _ready() -> void:
-	pass
+func _ready():
+	line_edit.text_changed.connect(_on_nama_changed)
 	
 func go_menu():
 	main_button.visible = true
