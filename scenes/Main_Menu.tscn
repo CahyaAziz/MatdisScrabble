@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://bl25ombvodojc" path="res://scripts/main_menu.gd" id="1_7260r"]
 [ext_resource type="Texture2D" uid="uid://mddu2d1somlh" path="res://Assets/GridTiles/Frame 979.png" id="2_l3124"]
 [ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="3_ecnfn"]
-[ext_resource type="Script" uid="uid://syow0uu01wa1" path="res://scripts/audio_control.gd" id="4_kiw3d"]
-[ext_resource type="Script" uid="uid://jf1sted30gtr" path="res://scripts/sfx.gd" id="5_8wqjl"]
+[ext_resource type="Script" path="res://scripts/audio_control.gd" id="4_kiw3d"]
+[ext_resource type="Script" path="res://scripts/sfx.gd" id="5_8wqjl"]
 [ext_resource type="AudioStream" uid="uid://cs1jxlt73ron3" path="res://Scrabble Music - Scrabble 1.mp3" id="6_73mli"]
-[ext_resource type="Script" uid="uid://dg4w2exky2eud" path="res://scripts/audio_stream_player_2.gd" id="7_skpiv"]
-[ext_resource type="Script" uid="uid://d3nxu7dlceyst" path="res://scripts/mulai_menu.gd" id="8_mwmg2"]
+[ext_resource type="Script" path="res://scripts/audio_stream_player_2.gd" id="7_skpiv"]
+[ext_resource type="Script" path="res://scripts/mulai_menu.gd" id="8_mwmg2"]
 [ext_resource type="Texture2D" uid="uid://daf8lnnilrqjc" path="res://Assets/ButtonIcon/Rectangle 144 (1).png" id="9_exptw"]
 [ext_resource type="Texture2D" uid="uid://dnvanmgh52hxx" path="res://Assets/ButtonIcon/salah.png" id="10_dsunt"]
 
@@ -113,13 +113,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -222.0
-offset_top = -115.0
-offset_right = 207.0
-offset_bottom = 105.0
+offset_left = -221.5
+offset_top = -114.5
+offset_right = 207.5
+offset_bottom = 242.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 9
+theme_override_constants/separation = 50
 
 [node name="Start" type="Button" parent="MainButton"]
 layout_mode = 2
@@ -171,16 +171,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -146.5
-offset_top = -277.0
-offset_right = 117.5
-offset_bottom = -167.0
+offset_left = -256.5
+offset_top = -324.5
+offset_right = 238.5
+offset_bottom = -131.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 20
 theme_override_fonts/font = ExtResource("3_ecnfn")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 150
 text = "LexIQ"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

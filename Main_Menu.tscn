@@ -1,31 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://bq0kkdcgwk3ij"]
+[gd_scene load_steps=15 format=3 uid="uid://bq0kkdcgwk3ij"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_gtid3"]
 [ext_resource type="Texture2D" uid="uid://mddu2d1somlh" path="res://Assets/GridTiles/Frame 979.png" id="1_wugcc"]
 [ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="2_gtid3"]
 [ext_resource type="Script" path="res://scripts/audio_control.gd" id="4_dnfjo"]
 [ext_resource type="Script" path="res://scripts/sfx.gd" id="5_3mro0"]
-[ext_resource type="Script" path="res://scripts/audio_stream_player_2.gd" id="6_tu7k8"]
-[ext_resource type="Texture2D" uid="uid://daf8lnnilrqjc" path="res://Assets/ButtonIcon/Rectangle 144 (1).png" id="7_5cvai"]
-[ext_resource type="Script" path="res://scripts/mulai_menu.gd" id="7_domf7"]
-[ext_resource type="Texture2D" uid="uid://dnvanmgh52hxx" path="res://Assets/ButtonIcon/salah.png" id="8_domf7"]
 [ext_resource type="AudioStream" uid="uid://cs1jxlt73ron3" path="res://Scrabble Music - Scrabble 1.mp3" id="6_5cvai"]
-
-[sub_resource type="FontFile" id="FontFile_5cvai"]
-cache/0/12/0/ascent = 0.0
-cache/0/12/0/descent = 0.0
-cache/0/12/0/underline_position = 0.0
-cache/0/12/0/underline_thickness = 0.0
-cache/0/12/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="Theme" id="Theme_domf7"]
-default_font = SubResource("FontFile_5cvai")
-default_font_size = 12
+[ext_resource type="Script" path="res://scripts/audio_stream_player_2.gd" id="6_tu7k8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtjmy"]
 texture = ExtResource("1_wugcc")
