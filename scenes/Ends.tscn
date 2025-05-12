@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx1w5qie7xm7p"]
+
+[ext_resource type="Script" uid="uid://b6abyp6aqhrte" path="res://Scenes/ends.gd" id="1_fwpmy"]
+[ext_resource type="Texture2D" uid="uid://oahheuo6spup" path="res://Assets/ButtonIcon/Frame 973 (2).png" id="1_ibbl8"]
+[ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="2_fwpmy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhv6l"]
+texture = ExtResource("1_ibbl8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yn8t"]
+bg_color = Color(0.704509, 0.648275, 0.317774, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Ends" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fwpmy")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 2585.0
+offset_bottom = 1452.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_uhv6l")
+
+[node name="Winner" type="Label" parent="."]
+layout_mode = 1
+offset_left = 1117.0
+offset_top = 611.0
+offset_right = 1494.0
+offset_bottom = 797.0
+theme_override_colors/font_color = Color(0.803922, 0.690196, 0.498039, 1)
+theme_override_fonts/font = ExtResource("2_fwpmy")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1188.0
+offset_top = 895.0
+offset_right = 1384.0
+offset_bottom = 986.0
+theme_override_colors/font_color = Color(0.803922, 0.690196, 0.498039, 1)
+theme_override_fonts/font = ExtResource("2_fwpmy")
+theme_override_font_sizes/font_size = 70
+text = "1000"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 171
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1086.0
+offset_top = 1021.0
+offset_right = 1481.0
+offset_bottom = 1121.0
+theme_override_colors/icon_normal_color = Color(0.783523, 0.783523, 0.783523, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_1yn8t")
+text = "NEXT"
+icon_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
