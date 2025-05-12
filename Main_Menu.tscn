@@ -1,34 +1,14 @@
-[gd_scene load_steps=25 format=3 uid="uid://cj26m1ltri7sf"]
+[gd_scene load_steps=15 format=3 uid="uid://d2ecmvkw24d8e"]
 
-[ext_resource type="Script" uid="uid://bl25ombvodojc" path="res://scripts/main_menu.gd" id="1_7260r"]
-[ext_resource type="Texture2D" uid="uid://mddu2d1somlh" path="res://Assets/GridTiles/Frame 979.png" id="2_l3124"]
-[ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="3_ecnfn"]
-[ext_resource type="Script" path="res://scripts/audio_control.gd" id="4_kiw3d"]
-[ext_resource type="Script" path="res://scripts/sfx.gd" id="5_8wqjl"]
-[ext_resource type="AudioStream" uid="uid://cs1jxlt73ron3" path="res://Scrabble Music - Scrabble 1.mp3" id="6_73mli"]
-[ext_resource type="Script" path="res://scripts/audio_stream_player_2.gd" id="7_skpiv"]
-[ext_resource type="Script" path="res://scripts/mulai_menu.gd" id="8_mwmg2"]
-[ext_resource type="Texture2D" uid="uid://daf8lnnilrqjc" path="res://Assets/ButtonIcon/Rectangle 144 (1).png" id="9_exptw"]
-[ext_resource type="Texture2D" uid="uid://dnvanmgh52hxx" path="res://Assets/ButtonIcon/salah.png" id="10_dsunt"]
-
-[sub_resource type="FontFile" id="FontFile_5cvai"]
-cache/0/12/0/ascent = 0.0
-cache/0/12/0/descent = 0.0
-cache/0/12/0/underline_position = 0.0
-cache/0/12/0/underline_thickness = 0.0
-cache/0/12/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="Theme" id="Theme_domf7"]
-default_font = SubResource("FontFile_5cvai")
-default_font_size = 12
+[ext_resource type="Texture2D" uid="uid://mddu2d1somlh" path="res://Assets/GridTiles/Frame 979.png" id="1_wugcc"]
+[ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="2_gtid3"]
+[ext_resource type="Script" path="res://scripts/audio_control.gd" id="4_dnfjo"]
+[ext_resource type="Script" path="res://scripts/sfx.gd" id="5_3mro0"]
+[ext_resource type="AudioStream" uid="uid://cs1jxlt73ron3" path="res://Scrabble Music - Scrabble 1.mp3" id="6_5cvai"]
+[ext_resource type="Script" path="res://scripts/audio_stream_player_2.gd" id="6_tu7k8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtjmy"]
-texture = ExtResource("2_l3124")
+texture = ExtResource("1_wugcc")
 modulate_color = Color(0.408329, 0.408329, 0.408329, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wugcc"]
@@ -72,25 +52,16 @@ thickness = 6
 color = Color(0.89351, 0.709076, 0.480957, 1)
 thickness = 6
 
-[sub_resource type="FontVariation" id="FontVariation_es6ti"]
-base_font = ExtResource("3_ecnfn")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t301m"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wrfco"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_teegn"]
-
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -1455.0
-offset_right = 2583.0
-offset_bottom = -2.0
+offset_left = 9.0
+offset_top = -1450.0
+offset_right = 2592.0
+offset_bottom = 3.0
 grow_vertical = 0
-script = ExtResource("1_7260r")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -103,23 +74,23 @@ offset_right = -5.0
 offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_domf7")
 theme_override_styles/panel = SubResource("StyleBoxTexture_wtjmy")
 
 [node name="MainButton" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -221.5
-offset_top = -114.5
-offset_right = 207.5
-offset_bottom = 242.5
+offset_left = -222.0
+offset_top = -115.0
+offset_right = 207.0
+offset_bottom = 105.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 9
 
 [node name="Start" type="Button" parent="MainButton"]
 layout_mode = 2
@@ -171,22 +142,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -256.5
-offset_top = -324.5
-offset_right = 238.5
-offset_bottom = -131.5
+offset_left = -146.5
+offset_top = -277.0
+offset_right = 117.5
+offset_bottom = -167.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 20
-theme_override_fonts/font = ExtResource("3_ecnfn")
-theme_override_font_sizes/font_size = 150
+theme_override_fonts/font = ExtResource("2_gtid3")
+theme_override_font_sizes/font_size = 80
 text = "LexIQ"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="Options" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -202,10 +172,10 @@ grow_vertical = 2
 
 [node name="Back" type="Button" parent="Options"]
 layout_mode = 1
-offset_left = 352.0
-offset_top = 429.0
-offset_right = 580.0
-offset_bottom = 493.0
+offset_left = 369.0
+offset_top = 312.0
+offset_right = 597.0
+offset_bottom = 376.0
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
@@ -243,42 +213,46 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -388.5
-offset_top = -81.5
-offset_right = 388.5
-offset_bottom = 41.5
+offset_left = -186.0
+offset_top = -94.0
+offset_right = 219.0
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 33
+theme_override_constants/separation = 11
+
+[node name="FullScreen" type="CheckButton" parent="Options/VBoxContainer"]
+layout_mode = 2
+text = "Fullscreen
+"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 142
+theme_override_constants/separation = 50
 
 [node name="Label" type="Label" parent="Options/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "Music Volume"
 
-[node name="Music" type="HSlider" parent="Options/VBoxContainer/HBoxContainer"]
+[node name="AudioControl" type="HSlider" parent="Options/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_styles/slider = SubResource("StyleBoxLine_gtid3")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_dnfjo")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_257up")
-max_value = 1.5
-step = 0.001
+max_value = 1.0
+step = 0.05
 value = 1.0
-script = ExtResource("4_kiw3d")
+script = ExtResource("4_dnfjo")
+audio_bus_name = "Music"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Options/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 160
+theme_override_constants/separation = 60
 
 [node name="Label" type="Label" parent="Options/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
 text = "Sound Effect"
 
 [node name="SFX" type="HSlider" parent="Options/VBoxContainer/HBoxContainer3"]
@@ -291,127 +265,18 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_257up")
 max_value = 1.0
 step = 0.05
 value = 1.0
-script = ExtResource("5_8wqjl")
+script = ExtResource("5_3mro0")
+audio_bus_name = "SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_73mli")
+stream = ExtResource("6_5cvai")
 autoplay = true
 bus = &"Music"
-script = ExtResource("7_skpiv")
-
-[node name="Mulai_menu" type="Panel" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 936.0
-offset_top = 547.0
-offset_right = 1641.0
-offset_bottom = 920.0
-script = ExtResource("8_mwmg2")
-
-[node name="Back" type="Button" parent="Mulai_menu"]
-layout_mode = 0
-offset_left = 39.0
-offset_top = 30.0
-offset_right = 127.0
-offset_bottom = 66.0
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0.0495005, 0.0861207, 0.11038, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wugcc")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dnfjo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_wugcc")
-theme_override_styles/normal = SubResource("StyleBoxFlat_wtjmy")
-text = "Back
-"
-
-[node name="Mulai" type="Button" parent="Mulai_menu"]
-layout_mode = 0
-offset_left = 219.0
-offset_top = 251.0
-offset_right = 490.0
-offset_bottom = 309.0
-size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxEmpty_wugcc")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dnfjo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_wugcc")
-theme_override_styles/normal = SubResource("StyleBoxFlat_wtjmy")
-text = "Start"
-
-[node name="enter name" type="Label" parent="Mulai_menu"]
-layout_mode = 0
-offset_left = 253.0
-offset_top = 27.0
-offset_right = 460.0
-offset_bottom = 114.0
-theme_override_font_sizes/font_size = 30
-text = "Enter Your
-Player's Name"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Mulai_menu"]
-layout_mode = 0
-offset_left = 155.0
-offset_top = 143.0
-offset_right = 567.0
-offset_bottom = 218.0
-texture = ExtResource("9_exptw")
-
-[node name="LineEdit" type="LineEdit" parent="Mulai_menu/TextureRect"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 11.0
-offset_right = 289.0
-offset_bottom = 49.0
-scale = Vector2(1.405, 1.405)
-theme_override_colors/clear_button_color_pressed = Color(0.000113828, 0.000113828, 0.000113828, 1)
-theme_override_colors/clear_button_color = Color(0.255659, 0.255659, 0.255659, 1)
-theme_override_colors/selection_color = Color(1, 1, 1, 1)
-theme_override_colors/font_selected_color = Color(0.0338533, 0.0338533, 0.0338533, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("FontVariation_es6ti")
-theme_override_icons/clear = ExtResource("10_dsunt")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_t301m")
-theme_override_styles/read_only = SubResource("StyleBoxEmpty_wrfco")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_teegn")
-placeholder_text = "ENTER NAME"
-alignment = 1
-max_length = 15
-clear_button_enabled = true
-caret_blink = true
-caret_blink_interval = 0.34
-
-[node name="warning_label" type="Label" parent="Mulai_menu/TextureRect/LineEdit"]
-layout_mode = 0
-offset_left = -103.203
-offset_top = -249.11
-offset_right = 391.797
-offset_bottom = -218.11
-theme_override_colors/font_color = Color(1, 0.027451, 0, 1)
-theme_override_colors/font_shadow_color = Color(0.4, 0.00784314, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 22
-horizontal_alignment = 1
-vertical_alignment = 1
-justification_flags = 171
-uppercase = true
+script = ExtResource("6_tu7k8")
 
 [connection signal="pressed" from="MainButton/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButton/Option" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="MainButton/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_options_pressed"]
-[connection signal="mouse_exited" from="Options/VBoxContainer/HBoxContainer/Music" to="Options/VBoxContainer/HBoxContainer/Music" method="_on_mouse_exited"]
-[connection signal="value_changed" from="Options/VBoxContainer/HBoxContainer/Music" to="." method="_on_music_value_changed"]
-[connection signal="value_changed" from="Options/VBoxContainer/HBoxContainer/Music" to="Options/VBoxContainer/HBoxContainer/Music" method="_on_value_changed"]
-[connection signal="mouse_exited" from="Options/VBoxContainer/HBoxContainer3/SFX" to="Options/VBoxContainer/HBoxContainer3/SFX" method="_on_mouse_exited"]
+[connection signal="value_changed" from="Options/VBoxContainer/HBoxContainer/AudioControl" to="Options/VBoxContainer/HBoxContainer/AudioControl" method="_on_value_changed"]
 [connection signal="value_changed" from="Options/VBoxContainer/HBoxContainer3/SFX" to="Options/VBoxContainer/HBoxContainer3/SFX" method="_on_value_changed"]
-[connection signal="pressed" from="Mulai_menu/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Mulai_menu/Mulai" to="." method="_on_mulai_pressed"]
