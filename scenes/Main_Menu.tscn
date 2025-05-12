@@ -296,6 +296,7 @@ script = ExtResource("5_8wqjl")
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_73mli")
 autoplay = true
+bus = &"Music"
 script = ExtResource("7_skpiv")
 
 [node name="Mulai_menu" type="Panel" parent="."]
