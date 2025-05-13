@@ -6,11 +6,14 @@ extends Node2D
 @onready var total_time_seconds : int = 60*10
 @onready var bag: Node2D = $Bag
 @onready var bag_2: Panel = $Bag2
+@onready var turns_value: Label = $TopUI/HBoxContainer/MoveInfo/TurnsValue
+
 
 var bag_ref
 
 func _ready():
 	nama.text = Global.username
+	turns_value.text = str(Global.turn)
 	timer.start()
 	bag_ref = $Bag
 	Global.player_bag.shuffle()
@@ -74,3 +77,4 @@ func update_bag_counts():
 func _on_bag_pressed() -> void:
 	update_bag_counts()
 	bag_menu()
+	

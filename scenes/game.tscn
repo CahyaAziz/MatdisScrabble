@@ -1055,7 +1055,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_eow3j")
 
-[node name="ScoreLabel2" type="Label" parent="TopUI/HBoxContainer/MoveInfo"]
+[node name="TurnsLabel" type="Label" parent="TopUI/HBoxContainer/MoveInfo"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -1065,7 +1065,7 @@ theme_override_font_sizes/font_size = 55
 text = "Turns Left"
 horizontal_alignment = 1
 
-[node name="ScoreValue2" type="Label" parent="TopUI/HBoxContainer/MoveInfo"]
+[node name="TurnsValue" type="Label" parent="TopUI/HBoxContainer/MoveInfo"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
