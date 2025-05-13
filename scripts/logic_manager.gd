@@ -3,11 +3,86 @@ extends Node
 var accepted_words = []
 var previous_board := {}
 
+var score = 0
+var TileDB = preload("res://scripts/TileDatabase.gd")
+
+# Define the board multipliers
+# DL = Double Letter, TL = Triple Letter, DW = Double Word, TW = Triple Word
+var board_multipliers = {
+	# Double Letter Score positions
+	Vector2(0, 3): "DL", Vector2(0, 11): "DL",
+	Vector2(2, 6): "DL", Vector2(2, 8): "DL",
+	Vector2(3, 0): "DL", Vector2(3, 7): "DL", Vector2(3, 14): "DL",
+	Vector2(6, 2): "DL", Vector2(6, 6): "DL", Vector2(6, 8): "DL", Vector2(6, 12): "DL",
+	Vector2(7, 3): "DL", Vector2(7, 11): "DL",
+	Vector2(8, 2): "DL", Vector2(8, 6): "DL", Vector2(8, 8): "DL", Vector2(8, 12): "DL",
+	Vector2(11, 0): "DL", Vector2(11, 7): "DL", Vector2(11, 14): "DL",
+	Vector2(12, 6): "DL", Vector2(12, 8): "DL",
+	Vector2(14, 3): "DL", Vector2(14, 11): "DL",
+	
+	# Triple Letter Score positions
+	Vector2(1, 5): "TL", Vector2(1, 9): "TL",
+	Vector2(5, 1): "TL", Vector2(5, 5): "TL", Vector2(5, 9): "TL", Vector2(5, 13): "TL",
+	Vector2(9, 1): "TL", Vector2(9, 5): "TL", Vector2(9, 9): "TL", Vector2(9, 13): "TL",
+	Vector2(13, 5): "TL", Vector2(13, 9): "TL",
+	
+	# Double Word Score positions
+	Vector2(1, 1): "DW", Vector2(1, 13): "DW",
+	Vector2(2, 2): "DW", Vector2(2, 12): "DW",
+	Vector2(3, 3): "DW", Vector2(3, 11): "DW",
+	Vector2(4, 4): "DW", Vector2(4, 10): "DW",
+	Vector2(10, 4): "DW", Vector2(10, 10): "DW",
+	Vector2(11, 3): "DW", Vector2(11, 11): "DW",
+	Vector2(12, 2): "DW", Vector2(12, 12): "DW",
+	Vector2(13, 1): "DW", Vector2(13, 13): "DW",
+	
+	# Triple Word Score positions
+	Vector2(0, 0): "TW", Vector2(0, 7): "TW", Vector2(0, 14): "TW",
+	Vector2(7, 0): "TW", Vector2(7, 14): "TW",
+	Vector2(14, 0): "TW", Vector2(14, 7): "TW", Vector2(14, 14): "TW",
+	
+	# Center tile (usually a Double Word Score)
+	Vector2(7, 7): "DW"
+}
+
+@onready var score_value: Label = $"../TopUI/HBoxContainer/Score/ScoreValue"
+
+
 func _ready():
 	load_word_list()
 
 func get_previous_board() -> Dictionary:
 	return previous_board
+	
+func calculate_word_score(word_positions, board, new_tiles):
+	var word_score = 0
+	var word_multiplier = 1
+	
+	for pos in word_positions:
+		var letter = board[pos]
+		var letter_score = TileDB.TILES[letter][0]
+		var letter_multiplier = 1
+		
+		# Only apply multipliers for new tiles
+		if pos in new_tiles:
+			# Check for letter multipliers
+			if board_multipliers.has(pos):
+				var multiplier_type = board_multipliers[pos]
+				if multiplier_type == "DL":
+					letter_multiplier = 2
+				elif multiplier_type == "TL":
+					letter_multiplier = 3
+				elif multiplier_type == "DW":
+					word_multiplier *= 2
+				elif multiplier_type == "TW":
+					word_multiplier *= 3
+		
+		word_score += letter_score * letter_multiplier
+	
+	# Apply word multiplier
+	word_score *= word_multiplier
+	
+	return word_score
 
 func are_new_tiles_connected(new_tiles: Dictionary) -> bool:
 	if new_tiles.size() == 0:
@@ -161,11 +236,6 @@ func _on_submit_pressed():
 		if not get_previous_board().has(pos):
 			current_move[pos] = board[pos]
 
-	# Debug prints
-	print("Current board: ", board)
-	print("Previous board: ", get_previous_board())
-	print("New tiles: ", current_move)
-
 	if current_move.size() == 0:
 		print("❌ No new tiles placed.")
 		return
@@ -181,38 +251,76 @@ func _on_submit_pressed():
 			print("❌ First move must cover the center tile (H8).")
 			return
 	else:
-		# Debug connectivity check
-		var connected = is_connected_to_existing(board, current_move)
-		print("Connected to existing tiles: ", connected)
-		
-		if not connected:
+		if not is_connected_to_existing(board, current_move):
 			print("❌ New tiles must connect to existing tiles.")
 			return
 
-	var words = []
-	words += find_words(board, true)  # horizontal
-	words += find_words(board, false) # vertical
-
-	if words.size() == 0:
+	var words_horizontal = find_words(board, true)  # horizontal
+	var words_vertical = find_words(board, false)   # vertical
+	var all_words = words_horizontal + words_vertical
+	
+	# Filter words to only include those that contain at least one new tile
+	var words_with_new_tiles = []
+	for word_data in all_words:
+		var contains_new_tile = false
+		for pos in word_data["positions"]:
+			if current_move.has(pos):
+				contains_new_tile = true
+				break
+		
+		if contains_new_tile:
+			words_with_new_tiles.append(word_data)
+	
+	if words_with_new_tiles.size() == 0:
 		print("⚠️ No complete words found. Add more tiles.")
 		return
-
+	
 	var invalid_words := []
-	for word in words:
+	var turn_score = 0
+	var valid_words = []
+	
+	for word_data in words_with_new_tiles:  # Use filtered words
+		var word = word_data["word"]
 		if word not in accepted_words:
 			invalid_words.append(word)
+		else:
+			# Calculate score for valid words
+			var word_score = calculate_word_score(word_data["positions"], board, current_move)
+			turn_score += word_score
+			valid_words.append(word + " (" + str(word_score) + ")")
+			print("Word: " + word + ", Score: " + str(word_score))
 
 	if invalid_words.size() > 0:
 		print("❌ Invalid words found: ", invalid_words)
 	else:
-		print("✅ All words are valid!")
+		# Add bonus for using all 7 tiles
+		if current_move.size() == 7:
+			turn_score += 50
+			print("Bonus for using all 7 tiles: +50")
+			
+		# Update total score
+		score += turn_score
+		print("✅ All words are valid! Turn score: " + str(turn_score) + ", Total score: " + str(score))
+		print("Words formed: " + ", ".join(valid_words))
+		
+		# Update score display in the UI
+		if score_value:
+			score_value.text = str(score)
+		else:
+			# Try to find the score label with a different path
+			var nodes = get_tree().get_nodes_in_group("ScoreValue")
+			if nodes.size() > 0:
+				nodes[0].text = str(score)
+			else:
+				print("Score label not found. Please add a Label node with the name 'Score' or add it to the 'score_label' group.")
+		
 		Global.is_first_move = false  # Only now toggle the flag
 		
 		# Make sure to create a deep copy of the board
 		previous_board = {}
 		for pos in board:
 			previous_board[pos] = board[pos]
-			
+		
 		print("Updated previous_board: ", previous_board)
 		
 		# Remove played tiles from hand only after a valid move
@@ -223,9 +331,6 @@ func _on_submit_pressed():
 				tile.lock()  # ← lock tile so it can't be moved again
 				Global.player_hand.erase(tile)
 
-
-
-
 func find_words(board: Dictionary, horizontal: bool) -> Array:
 	var found_words = []
 	var checked := {}
@@ -234,8 +339,8 @@ func find_words(board: Dictionary, horizontal: bool) -> Array:
 		if pos in checked:
 			continue
 
-		var word = ""
 		var letters = []
+		var word_positions = []
 		var start_pos = pos
 		var dir = Vector2(0, 1) if horizontal else Vector2(1, 0)
 
@@ -248,11 +353,12 @@ func find_words(board: Dictionary, horizontal: bool) -> Array:
 		# Go forward to build the word
 		while board.has(p):
 			letters.append(board[p])
+			word_positions.append(p)
 			checked[p] = true
 			p += dir
 
 		if letters.size() > 1:
-			word = "".join(letters)
-			found_words.append(word)
+			var word = "".join(letters)
+			found_words.append({"word": word, "positions": word_positions})
 
 	return found_words
