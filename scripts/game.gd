@@ -6,21 +6,53 @@ extends Node2D
 @onready var total_time_seconds : int = 60*10
 @onready var bag: Node2D = $Bag
 @onready var bag_2: Panel = $Bag2
+
 @onready var scroll_container: ScrollContainer = $Definition/VBoxContainer/ScrollContainer
 @onready var toggle_button: Button = $Definition/VBoxContainer/HBoxContainer/ShowDefiniton
 @onready var other: Button = $GameplayButton/HBoxContainer/Other
 @onready var definition: Panel = $Definition
 
+@onready var turns_value: Label = $TopUI/HBoxContainer/MoveInfo/TurnsValue
+@onready var swap_manager = $SwapManager
+
 var bag_ref
 
+var game_reset = null
+
 func _ready():
+	# Your existing code...
 	nama.text = Global.username
+	turns_value.text = str(Global.turn)
 	timer.start()
 	bag_ref = $Bag
+	
+	# Reset game state
+	if !has_node("GameReset"):
+		var game_reset_script = load("res://scripts/game_reset.gd")
+		var game_reset_node = Node.new()
+		game_reset_node.name = "GameReset"
+		game_reset_node.set_script(game_reset_script)
+		add_child(game_reset_node)
+		game_reset = game_reset_node
+	
+	# Call the reset function
+	if game_reset:
+		game_reset.reset_game_state()
+		
 	Global.player_bag.shuffle()
-	$Bag.debug_draw_tiles(["N","A","D","A", "K", "A"])
-	scroll_container.visible = false
+	$Bag.debug_draw_tiles(["N","A","D","A", "K", "A", "N"])
+  scroll_container.visible = false
 	toggle_button.pressed.connect(_on_toggle_definition)
+	
+	# Initialize the swap manager
+	if !has_node("SwapManager"):
+		var swap_manager_scene = load("res://scenes/swap_manager.gd")
+		var swap_manager_node = Node.new()
+		swap_manager_node.name = "SwapManager"
+		swap_manager_node.set_script(swap_manager_scene)
+		add_child(swap_manager_node)
+		swap_manager = swap_manager_node
+		print("Swap manager initialized")
 
 func _on_timer_timeout():
 	total_time_seconds -= 1
@@ -33,12 +65,6 @@ func _on_timer_timeout():
 	if total_time_seconds <= 0:
 		timer.stop()
 		get_tree().change_scene_to_file("res://Scenes/Ends.tscn")
-
-
-func _on_button_3_pressed() -> void:
-	Global.player_bag.shuffle()
-	bag_ref.draw_tiles(1)
-
 
 func bag_menu():
 	bag_2.visible = true	
@@ -93,3 +119,4 @@ func _on_other_pressed() -> void:
 func _on_bag_pressed() -> void:
 	update_bag_counts()
 	bag_menu()
+	

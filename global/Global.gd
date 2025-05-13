@@ -1,9 +1,9 @@
-# Global.gd
 extends Node
 var username = ""
 
 var is_first_move = true
 
+var turn = 3
 var board = {}
 
 var player_hand = []
