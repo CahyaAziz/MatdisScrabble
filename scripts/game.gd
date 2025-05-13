@@ -7,17 +7,28 @@ extends Node2D
 @onready var bag: Node2D = $Bag
 @onready var bag_2: Panel = $Bag2
 @onready var turns_value: Label = $TopUI/HBoxContainer/MoveInfo/TurnsValue
-
+@onready var swap_manager = $SwapManager
 
 var bag_ref
 
 func _ready():
+	# Your existing code...
 	nama.text = Global.username
 	turns_value.text = str(Global.turn)
 	timer.start()
 	bag_ref = $Bag
 	Global.player_bag.shuffle()
 	$Bag.debug_draw_tiles(["N","A","D","A", "K", "A"])
+	
+	# Initialize the swap manager
+	if !has_node("SwapManager"):
+		var swap_manager_scene = load("res://scenes/swap_manager.gd")
+		var swap_manager_node = Node.new()
+		swap_manager_node.name = "SwapManager"
+		swap_manager_node.set_script(swap_manager_scene)
+		add_child(swap_manager_node)
+		swap_manager = swap_manager_node
+		print("Swap manager initialized")
 
 func _on_timer_timeout():
 	total_time_seconds -= 1
@@ -30,11 +41,6 @@ func _on_timer_timeout():
 	if total_time_seconds <= 0:
 		timer.stop()
 		get_tree().change_scene_to_file("res://Scenes/Ends.tscn")
-
-
-func _on_button_3_pressed() -> void:
-	Global.player_bag.shuffle()
-	bag_ref.draw_tiles(1)
 
 func bag_menu():
 	bag_2.visible = true	
