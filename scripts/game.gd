@@ -14,7 +14,7 @@ func _ready():
 	timer.start()
 	bag_ref = $Bag
 	Global.player_bag.shuffle()
-	bag_ref.draw_tiles(7)	
+	$Bag.debug_draw_tiles(["N","A","D","A", "K", "A"])
 
 func _on_timer_timeout():
 	total_time_seconds -= 1
@@ -34,12 +34,7 @@ func _on_button_3_pressed() -> void:
 	bag_ref.draw_tiles(1)
 
 func bag_menu():
-	bag_2.visible = true
-
-func _on_button_5_pressed() -> void:
-	update_bag_counts()
-	bag_menu()
-	
+	bag_2.visible = true	
 
 func go_menu():
 	bag_2.visible = false
@@ -51,7 +46,7 @@ func _on_button_pressed() -> void:
 func update_bag_counts():
 	var letter_counts = {}
 
-	# Hitung jumlah setiap huruf di player_bag
+	# Hitung jumlah setiap huruf di player_bag, termasuk 'blank'
 	for letter in Global.player_bag:
 		if not letter_counts.has(letter):
 			letter_counts[letter] = 1
@@ -65,5 +60,17 @@ func update_bag_counts():
 		if child.name.begins_with("Huruf_"):
 			var huruf = child.name.replace("Huruf_", "")  # Misal: Huruf_A → A
 			var label_node = child.get_node("Label_" + huruf)
+
+			# Tangani huruf biasa dan 'blank'
 			if label_node and label_node is Label:
-				label_node.text = str(letter_counts.get(huruf, 0))
+				# Kalau 'blank', ambil jumlah 'blank', lainnya seperti biasa
+				if huruf == "blank":
+					label_node.text = str(letter_counts.get("blank", 0))
+				else:
+					label_node.text = str(letter_counts.get(huruf, 0))
+
+
+
+func _on_bag_pressed() -> void:
+	update_bag_counts()
+	bag_menu()

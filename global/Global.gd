@@ -2,6 +2,10 @@
 extends Node
 var username = ""
 
+var is_first_move = true
+
+var board = {}
+
 var player_hand = []
 var player_bag = [
 	# 1-point letters
