@@ -34,12 +34,7 @@ func _on_button_3_pressed() -> void:
 	bag_ref.draw_tiles(1)
 
 func bag_menu():
-	bag_2.visible = true
-
-func _on_button_5_pressed() -> void:
-	update_bag_counts()
-	bag_menu()
-	
+	bag_2.visible = true	
 
 func go_menu():
 	bag_2.visible = false
@@ -67,3 +62,8 @@ func update_bag_counts():
 			var label_node = child.get_node("Label_" + huruf)
 			if label_node and label_node is Label:
 				label_node.text = str(letter_counts.get(huruf, 0))
+
+
+func _on_bag_pressed() -> void:
+	update_bag_counts()
+	bag_menu()
