@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://kxljhkmdhsjv"]
+[gd_scene load_steps=64 format=3 uid="uid://kxljhkmdhsjv"]
 
 [ext_resource type="Texture2D" uid="uid://t6rdxrbjqvds" path="res://Assets/GridTiles/Tilemap.svg" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://crwdyicmk0tkd" path="res://scripts/game.gd" id="1_vef74"]
@@ -196,6 +196,20 @@ bg_color = Color(0.239216, 0.235294, 0.290196, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bwj6o"]
 texture = ExtResource("39_ym3tv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ool0"]
+bg_color = Color(0.239216, 0.235294, 0.290196, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr1ej"]
+bg_color = Color(0.366523, 0.361353, 0.435462, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_vef74")
@@ -1601,8 +1615,88 @@ offset_right = 1497.0
 offset_bottom = 347.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_bwj6o")
 
+[node name="Definition" type="Panel" parent="."]
+visible = false
+z_index = 3
+offset_left = 943.0
+offset_top = 530.0
+offset_right = 1648.0
+offset_bottom = 948.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ool0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Definition"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 34.0
+offset_right = 584.0
+offset_bottom = 395.0
+theme_override_constants/separation = 20
+
+[node name="Judul" type="Label" parent="Definition/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Words Definitions"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Definition/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Definition/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Ayam"
+
+[node name="ShowDefiniton" type="Button" parent="Definition/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "🔽"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Definition/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pr1ej")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Definition/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label" type="Label" parent="Definition/VBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+text = "unggas yang pada umumnya tidak dapat terbang, dapat dijinakkan dan dipelihara, berjengger, yang jantan berkokok dan bertaji, sedangkan yang betina berkotek"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Definition"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 14.0
+offset_right = 58.0
+offset_bottom = 54.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bu0y5")
+icon = ExtResource("40_f3c8l")
+
+[connection signal="pressed" from="GameplayButton/HBoxContainer/Other" to="." method="_on_other_pressed"]
 [connection signal="pressed" from="GameplayButton/HBoxContainer/Swap" to="SwapManager" method="_on_swap_button_pressed"]
 [connection signal="pressed" from="GameplayButton/HBoxContainer/Submit" to="LogicManager" method="_on_submit_pressed"]
 [connection signal="pressed" from="GameplayButton/HBoxContainer/Bag" to="." method="_on_bag_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Bag2/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Definition/Button" to="." method="_on_button_pressed"]
