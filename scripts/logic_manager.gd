@@ -1,10 +1,16 @@
 extends Node
 @onready var valid: Panel = $"../Valid"
+@onready var turns_value: Label = $"../TopUI/HBoxContainer/MoveInfo/TurnsValue"
+
+var bag_ref
 
 var accepted_words = []
 var previous_board := {}
 
 var TileDB = preload("res://scripts/TileDatabase.gd")
+
+var tiles_placed = 0
+
 # Define the board multipliers
 # DL = Double Letter, TL = Triple Letter, DW = Double Word, TW = Triple Word
 var board_multipliers = {
@@ -49,6 +55,7 @@ var board_multipliers = {
 
 func _ready():
 	load_word_list()
+	bag_ref = $"../Bag"
 
 func hide_warning():
 	print("Mulai countdown...")
@@ -332,6 +339,14 @@ func _on_submit_pressed():
 				var tile = slot.occupied_tile
 				tile.lock()
 				Global.player_hand.erase(tile)
+				tiles_placed += 1
+		
+		bag_ref.draw_tiles(tiles_placed)
+		tiles_placed = 0
+		Global.turn -= 1
+		turns_value.text = str(Global.turn)
+		if Global.turn == 0:
+			get_tree().change_scene_to_file("res://scenes/Ends.tscn")
 
 func find_words(board: Dictionary, horizontal: bool) -> Array:
 	var found_words = []
