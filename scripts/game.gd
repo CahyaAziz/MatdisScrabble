@@ -41,7 +41,7 @@ func _ready():
 		
 	Global.player_bag.shuffle()
 	$Bag.debug_draw_tiles(["N","A","D","A", "K", "A", "N"])
-  scroll_container.visible = false
+	scroll_container.visible = false
 	toggle_button.pressed.connect(_on_toggle_definition)
 	
 	# Initialize the swap manager
