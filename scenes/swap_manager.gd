@@ -147,21 +147,39 @@ func exit_swap_mode():
 	# Clear selected tiles array
 	selected_tiles.clear()
 
+# Update the toggle_tile_selection function in swap_manager.gd
+
 func toggle_tile_selection(tile):
 	print("Toggling selection for tile: ", tile.letter)
 	
 	if tile in selected_tiles:
 		# Deselect tile
 		selected_tiles.erase(tile)
+		
+		# Make sure the indicator is removed and recreated to avoid any issues
 		if tile.has_node("SelectionIndicator"):
-			tile.get_node("SelectionIndicator").visible = false
+			tile.get_node("SelectionIndicator").queue_free()
+		
 		print("Tile deselected")
 	else:
 		# Select tile
 		selected_tiles.append(tile)
+		
+		# Remove any existing indicator
 		if tile.has_node("SelectionIndicator"):
-			tile.get_node("SelectionIndicator").visible = true
-		print("Tile selected")
+			tile.get_node("SelectionIndicator").queue_free()
+		
+		# Create a new indicator with proper settings
+		var indicator = ColorRect.new()
+		indicator.name = "SelectionIndicator"
+		indicator.color = Color(0.2, 0.8, 0.2, 0.7)  # More opaque green
+		indicator.size = Vector2(60, 60)  # Match tile size
+		indicator.position = Vector2(-30, -30)  # Center on tile
+		indicator.z_index = 10  # Make sure it's above the tile
+		indicator.mouse_filter = Control.MOUSE_FILTER_IGNORE  # Don't block mouse events
+		tile.add_child(indicator)
+		
+		print("Tile selected, indicator added")
 
 func perform_swap():
 	print("Performing swap with ", selected_tiles.size(), " tiles")
