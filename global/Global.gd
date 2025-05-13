@@ -1,6 +1,33 @@
 # Global.gd
 extends Node
-var username = ""
+
+var username: String = ""
+var score: int = 0
+var sisa_waktu: int = 0  # waktu dalam detik
+
+var histori = [] # Menyimpan daftar histori
+
+const SAVE_PATH = "user://histori.json"
+
+# Simpan histori ke file JSON
+func simpan_histori():
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	if file:
+		file.store_string(JSON.stringify(histori))
+		file.close()
+
+# Muat histori dari file JSON
+func muat_histori():
+	if FileAccess.file_exists(SAVE_PATH):
+		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+		if file:
+			var data = file.get_as_text()
+			var result = JSON.parse_string(data)
+			if typeof(result) == TYPE_ARRAY:
+				histori = result
+			file.close()
+
+
 
 var is_first_move = true
 
