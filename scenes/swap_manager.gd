@@ -6,6 +6,8 @@ extends Node
 @onready var submit_button = $"../GameplayButton/HBoxContainer/Submit"
 @onready var reset_button = $"../GameplayButton/HBoxContainer/Reset"
 @onready var bag_button = $"../GameplayButton/HBoxContainer/Bag"
+@onready var turns_value: Label = $"../TopUI/HBoxContainer/MoveInfo/TurnsValue"
+
 
 # References to game systems
 @onready var player_hand = $"../PlayerHand"
@@ -213,3 +215,12 @@ func perform_swap():
 	
 	# Exit swap mode
 	exit_swap_mode()
+	
+	# Reduces turn
+	Global.turn -= 1
+	print(Global.turn)
+	turns_value.text = str(Global.turn)
+	if Global.turn == 0:
+		get_tree().change_scene_to_file("res://scenes/Ends.tscn")
+	elif Global.turn == 1:
+		swap_button.disabled = true

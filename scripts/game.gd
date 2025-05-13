@@ -11,14 +11,30 @@ extends Node2D
 
 var bag_ref
 
+var game_reset = null
+
 func _ready():
 	# Your existing code...
 	nama.text = Global.username
 	turns_value.text = str(Global.turn)
 	timer.start()
 	bag_ref = $Bag
+	
+	# Reset game state
+	if !has_node("GameReset"):
+		var game_reset_script = load("res://scripts/game_reset.gd")
+		var game_reset_node = Node.new()
+		game_reset_node.name = "GameReset"
+		game_reset_node.set_script(game_reset_script)
+		add_child(game_reset_node)
+		game_reset = game_reset_node
+	
+	# Call the reset function
+	if game_reset:
+		game_reset.reset_game_state()
+		
 	Global.player_bag.shuffle()
-	$Bag.debug_draw_tiles(["N","A","D","A", "K", "A"])
+	$Bag.debug_draw_tiles(["N","A","D","A", "K", "A", "N"])
 	
 	# Initialize the swap manager
 	if !has_node("SwapManager"):
