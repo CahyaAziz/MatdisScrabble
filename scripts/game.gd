@@ -1,10 +1,11 @@
 extends Node2D
-
+@onready var game_scene: Node2D = $"."
 @onready var nama: Label = $TopUI/HBoxContainer2/Panel/TextureRect/Nama
 @onready var timer: Timer = $Timer
 @onready var label: Label = $Label
 @onready var total_time_seconds : int = 60*10
 @onready var bag: Node2D = $Bag
+@onready var bag_2: Panel = $Bag2
 
 var bag_ref
 
@@ -31,3 +32,38 @@ func _on_timer_timeout():
 func _on_button_3_pressed() -> void:
 	Global.player_bag.shuffle()
 	bag_ref.draw_tiles(1)
+
+func bag_menu():
+	bag_2.visible = true
+
+func _on_button_5_pressed() -> void:
+	update_bag_counts()
+	bag_menu()
+	
+
+func go_menu():
+	bag_2.visible = false
+	game_scene.visible = true
+
+func _on_button_pressed() -> void:
+	go_menu()
+
+func update_bag_counts():
+	var letter_counts = {}
+
+	# Hitung jumlah setiap huruf di player_bag
+	for letter in Global.player_bag:
+		if not letter_counts.has(letter):
+			letter_counts[letter] = 1
+		else:
+			letter_counts[letter] += 1
+
+	# Ambil GridContainer di Bag2
+	var grid = $Bag2/GridContainer
+	
+	for child in grid.get_children():
+		if child.name.begins_with("Huruf_"):
+			var huruf = child.name.replace("Huruf_", "")  # Misal: Huruf_A → A
+			var label_node = child.get_node("Label_" + huruf)
+			if label_node and label_node is Label:
+				label_node.text = str(letter_counts.get(huruf, 0))
