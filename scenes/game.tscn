@@ -1,17 +1,45 @@
-[gd_scene load_steps=28 format=3 uid="uid://kxljhkmdhsjv"]
+[gd_scene load_steps=56 format=3 uid="uid://kxljhkmdhsjv"]
+
 
 [ext_resource type="Texture2D" uid="uid://t6rdxrbjqvds" path="res://Assets/GridTiles/Tilemap.svg" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://crwdyicmk0tkd" path="res://scripts/game.gd" id="1_vef74"]
 [ext_resource type="Texture2D" uid="uid://bnpi8dxkavuxt" path="res://Assets/ButtonIcon/Dot.svg" id="2_7jktm"]
-[ext_resource type="Script" uid="uid://bw6oo82jvd5pu" path="res://Assets/TileSets/scene/tile_manager.gd" id="2_j5wjh"]
+[ext_resource type="Script" path="res://Assets/TileSets/scene/tile_manager.gd" id="2_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://bvh0x3bso4t6y" path="res://Assets/ButtonIcon/Shuffle.svg" id="3_ryrav"]
 [ext_resource type="Texture2D" uid="uid://bualvgmqha822" path="res://Assets/ButtonIcon/Reset.svg" id="4_eow3j"]
 [ext_resource type="PackedScene" uid="uid://bo3md2y6ajh3q" path="res://Assets/TileSets/scene/tile_slot.tscn" id="5_hve3p"]
 [ext_resource type="Texture2D" uid="uid://bmumk1dr22n44" path="res://Assets/ButtonIcon/Bag.svg" id="5_j5wjh"]
-[ext_resource type="Script" uid="uid://bws1rjijysee5" path="res://Assets/TileSets/scene/player_hand.gd" id="5_vtaks"]
-[ext_resource type="Script" uid="uid://ciwonlsjaoqml" path="res://Assets/TileSets/bag.gd" id="6_kvpfn"]
+[ext_resource type="Script" path="res://Assets/TileSets/scene/player_hand.gd" id="5_vtaks"]
+[ext_resource type="Script" path="res://Assets/TileSets/bag.gd" id="6_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://bciwqel88673n" path="res://Assets/ButtonIcon/Bar.svg" id="6_ryrav"]
 [ext_resource type="Script" uid="uid://c1ia6bqf77udb" path="res://scripts/logic_manager.gd" id="12_dinhu"]
+[ext_resource type="Texture2D" uid="uid://djko33vy5f6gx" path="res://Assets/TileSets/A_Tile.svg" id="12_6uxt2"]
+[ext_resource type="Texture2D" uid="uid://de2jhvrgu41iy" path="res://Assets/TileSets/B_Tile.svg" id="13_ym3tv"]
+[ext_resource type="Texture2D" uid="uid://0f64nplg20w6" path="res://Assets/TileSets/C_Tile.svg" id="14_bwj6o"]
+[ext_resource type="Texture2D" uid="uid://bt1qprs7e5818" path="res://Assets/TileSets/D_Tile.svg" id="15_f3c8l"]
+[ext_resource type="Texture2D" uid="uid://vmuvfiixeu52" path="res://Assets/TileSets/E_Tile.svg" id="16_bu0y5"]
+[ext_resource type="Texture2D" uid="uid://c58gnljximvij" path="res://Assets/TileSets/F_Tile.svg" id="17_6a4tp"]
+[ext_resource type="Texture2D" uid="uid://c7gnw6i1videv" path="res://Assets/TileSets/G_Tile.svg" id="18_631el"]
+[ext_resource type="Texture2D" uid="uid://db2mnnod4kb0v" path="res://Assets/TileSets/H_Tile.svg" id="19_vs120"]
+[ext_resource type="Texture2D" uid="uid://q4f2r4homcne" path="res://Assets/TileSets/I_Tile.svg" id="20_v2cs8"]
+[ext_resource type="Texture2D" uid="uid://gpr4167jrxcl" path="res://Assets/TileSets/J_Tile.svg" id="21_32sfa"]
+[ext_resource type="Texture2D" uid="uid://bhx4b4akamkmv" path="res://Assets/TileSets/K_Tile.svg" id="22_titue"]
+[ext_resource type="Texture2D" uid="uid://l8jo2emsysir" path="res://Assets/TileSets/L_Tile.svg" id="23_tt7mg"]
+[ext_resource type="Texture2D" uid="uid://dlydllbn3fxdw" path="res://Assets/TileSets/M_Tile.svg" id="24_htg8p"]
+[ext_resource type="Texture2D" uid="uid://dxsvgd2ivsjg6" path="res://Assets/TileSets/N_Tile.svg" id="25_jcvim"]
+[ext_resource type="Texture2D" uid="uid://d0rps5qq3xeyx" path="res://Assets/TileSets/O_Tile.svg" id="26_fnkle"]
+[ext_resource type="Texture2D" uid="uid://cxvotfl6xjrea" path="res://Assets/TileSets/P_Tile.svg" id="27_wr3wg"]
+[ext_resource type="Texture2D" uid="uid://d3s12x76wkadb" path="res://Assets/TileSets/Q_Tile.svg" id="28_6xvgv"]
+[ext_resource type="Texture2D" uid="uid://1h6boty50j18" path="res://Assets/TileSets/R_Tile.svg" id="29_8lpvs"]
+[ext_resource type="Texture2D" uid="uid://bet2xlmi5328d" path="res://Assets/TileSets/S_Tile.svg" id="30_x6jpx"]
+[ext_resource type="Texture2D" uid="uid://cwx8ofpxwtxc6" path="res://Assets/TileSets/T_Tile.svg" id="31_sjh24"]
+[ext_resource type="Texture2D" uid="uid://p5vmu65fvbk2" path="res://Assets/TileSets/U_Tile.svg" id="32_k5jl5"]
+[ext_resource type="Texture2D" uid="uid://dy5wqeeg6i7ck" path="res://Assets/TileSets/V_Tile.svg" id="33_nqk4g"]
+[ext_resource type="Texture2D" uid="uid://i1a84gem3lpc" path="res://Assets/TileSets/W_Tile.svg" id="34_fh6x0"]
+[ext_resource type="Texture2D" uid="uid://r2yyinaow4h3" path="res://Assets/TileSets/X_Tile.svg" id="35_j0obb"]
+[ext_resource type="Texture2D" uid="uid://dnldgyvr8pr05" path="res://Assets/TileSets/Y_Tile.svg" id="36_nfavm"]
+[ext_resource type="Texture2D" uid="uid://icp0arllhv3l" path="res://Assets/TileSets/Z_Tile.svg" id="37_jcn4n"]
+[ext_resource type="Texture2D" uid="uid://dnvanmgh52hxx" path="res://Assets/ButtonIcon/salah.png" id="38_l4kai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
 texture = ExtResource("1_80nbo")
@@ -151,6 +179,11 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kcoun"]
+bg_color = Color(0.239216, 0.235294, 0.290196, 1)
+
+[sub_resource type="Theme" id="Theme_jegl3"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_vef74")
@@ -1153,4 +1186,370 @@ script = ExtResource("12_dinhu")
 
 [connection signal="pressed" from="GameplayButton/HBoxContainer/Swap" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="GameplayButton/HBoxContainer/Submit" to="LogicManager" method="_on_submit_pressed"]
+[node name="Bag2" type="Panel" parent="."]
+z_index = 3
+offset_left = 943.0
+offset_top = 530.0
+offset_right = 1648.0
+offset_bottom = 948.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kcoun")
+
+[node name="GridContainer" type="GridContainer" parent="Bag2"]
+offset_left = 63.0
+offset_top = 24.0
+offset_right = 631.0
+offset_bottom = 400.0
+theme = SubResource("Theme_jegl3")
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 4
+columns = 7
+
+[node name="Huruf_A" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="a_Tile_svg" type="TextureRect" parent="Bag2/GridContainer/Huruf_A"]
+layout_mode = 2
+texture = ExtResource("12_6uxt2")
+
+[node name="Label_A" type="Label" parent="Bag2/GridContainer/Huruf_A"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_B" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Label_B"]
+layout_mode = 2
+texture = ExtResource("13_ym3tv")
+
+[node name="Label_B" type="Label" parent="Bag2/GridContainer/Label_B"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_C" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_C"]
+layout_mode = 2
+texture = ExtResource("14_bwj6o")
+
+[node name="Label_C" type="Label" parent="Bag2/GridContainer/Huruf_C"]
+layout_mode = 2
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_D" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_D"]
+layout_mode = 2
+texture = ExtResource("15_f3c8l")
+
+[node name="Label_D" type="Label" parent="Bag2/GridContainer/Huruf_D"]
+layout_mode = 2
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_E" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_E"]
+layout_mode = 2
+texture = ExtResource("16_bu0y5")
+
+[node name="Label_E" type="Label" parent="Bag2/GridContainer/Huruf_E"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_F" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_F"]
+layout_mode = 2
+texture = ExtResource("17_6a4tp")
+
+[node name="Label_F" type="Label" parent="Bag2/GridContainer/Huruf_F"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_G" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_G"]
+layout_mode = 2
+texture = ExtResource("18_631el")
+
+[node name="Label_G" type="Label" parent="Bag2/GridContainer/Huruf_G"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_H" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_H"]
+layout_mode = 2
+texture = ExtResource("19_vs120")
+
+[node name="Label_H" type="Label" parent="Bag2/GridContainer/Huruf_H"]
+layout_mode = 2
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_I" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_I"]
+layout_mode = 2
+texture = ExtResource("20_v2cs8")
+
+[node name="Label_I" type="Label" parent="Bag2/GridContainer/Huruf_I"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+
+[node name="Huruf_J" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_J"]
+layout_mode = 2
+texture = ExtResource("21_32sfa")
+
+[node name="Label_J" type="Label" parent="Bag2/GridContainer/Huruf_J"]
+layout_mode = 2
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_K" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_K"]
+layout_mode = 2
+texture = ExtResource("22_titue")
+
+[node name="Label_K" type="Label" parent="Bag2/GridContainer/Huruf_K"]
+layout_mode = 2
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_L" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_L"]
+layout_mode = 2
+texture = ExtResource("23_tt7mg")
+
+[node name="Label_L" type="Label" parent="Bag2/GridContainer/Huruf_L"]
+layout_mode = 2
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_M" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_M"]
+layout_mode = 2
+texture = ExtResource("24_htg8p")
+
+[node name="Label_M" type="Label" parent="Bag2/GridContainer/Huruf_M"]
+layout_mode = 2
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_N" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_N"]
+layout_mode = 2
+texture = ExtResource("25_jcvim")
+
+[node name="Label_N" type="Label" parent="Bag2/GridContainer/Huruf_N"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_O" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_O"]
+layout_mode = 2
+texture = ExtResource("26_fnkle")
+
+[node name="Label_O" type="Label" parent="Bag2/GridContainer/Huruf_O"]
+layout_mode = 2
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_P" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_P"]
+layout_mode = 2
+texture = ExtResource("27_wr3wg")
+
+[node name="Label_P" type="Label" parent="Bag2/GridContainer/Huruf_P"]
+layout_mode = 2
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_Q" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_Q"]
+layout_mode = 2
+texture = ExtResource("28_6xvgv")
+
+[node name="Label_Q" type="Label" parent="Bag2/GridContainer/Huruf_Q"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_R" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_R"]
+layout_mode = 2
+texture = ExtResource("29_8lpvs")
+
+[node name="Label_R" type="Label" parent="Bag2/GridContainer/Huruf_R"]
+layout_mode = 2
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_S" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_S"]
+layout_mode = 2
+texture = ExtResource("30_x6jpx")
+
+[node name="Label_S" type="Label" parent="Bag2/GridContainer/Huruf_S"]
+layout_mode = 2
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_T" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_T"]
+layout_mode = 2
+texture = ExtResource("31_sjh24")
+
+[node name="Label_T" type="Label" parent="Bag2/GridContainer/Huruf_T"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_U" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_U"]
+layout_mode = 2
+texture = ExtResource("32_k5jl5")
+
+[node name="Label_U" type="Label" parent="Bag2/GridContainer/Huruf_U"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_V" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_V"]
+layout_mode = 2
+texture = ExtResource("33_nqk4g")
+
+[node name="Label_V" type="Label" parent="Bag2/GridContainer/Huruf_V"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_W" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_W"]
+layout_mode = 2
+texture = ExtResource("34_fh6x0")
+
+[node name="Label_W" type="Label" parent="Bag2/GridContainer/Huruf_W"]
+layout_mode = 2
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_X" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_X"]
+layout_mode = 2
+texture = ExtResource("35_j0obb")
+
+[node name="Label_X" type="Label" parent="Bag2/GridContainer/Huruf_X"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_Y" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_Y"]
+layout_mode = 2
+texture = ExtResource("36_nfavm")
+
+[node name="Label_Y" type="Label" parent="Bag2/GridContainer/Huruf_Y"]
+layout_mode = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Huruf_Z" type="VBoxContainer" parent="Bag2/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Bag2/GridContainer/Huruf_Z"]
+layout_mode = 2
+texture = ExtResource("37_jcn4n")
+
+[node name="Label_Z" type="Label" parent="Bag2/GridContainer/Huruf_Z"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Bag2"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 48.0
+offset_bottom = 48.0
+icon = ExtResource("38_l4kai")
+
+[connection signal="pressed" from="GameplayButton/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="GameplayButton/HBoxContainer/Button5" to="." method="_on_button_5_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Bag2/Button" to="." method="_on_button_pressed"]
