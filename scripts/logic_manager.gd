@@ -3,11 +3,11 @@ extends Node
 @onready var turns_value: Label = $"../TopUI/HBoxContainer/MoveInfo/TurnsValue"
 
 var bag_ref
+var game_ref
 
 var accepted_words = []
 var previous_board := {}
 
-var score = 0
 var TileDB = preload("res://scripts/TileDatabase.gd")
 
 var tiles_placed = 0
@@ -57,6 +57,7 @@ var board_multipliers = {
 func _ready():
 	load_word_list()
 	bag_ref = $"../Bag"
+	game_ref = $".."
 
 func hide_warning():
 	print("Mulai countdown...")
@@ -311,18 +312,18 @@ func _on_submit_pressed():
 			print("Bonus for using all 7 tiles: +50")
 			
 		# Update total score
-		score += turn_score
-		print("✅ All words are valid! Turn score: " + str(turn_score) + ", Total score: " + str(score))
+		Global.score += turn_score
+		print("✅ All words are valid! Turn score: " + str(turn_score) + ", Total score: " + str(Global.score))
 		print("Words formed: " + ", ".join(valid_words))
 		
 		# Update score display in the UI
 		if score_value:
-			score_value.text = str(score)
+			score_value.text = str(Global.score)
 		else:
 			# Try to find the score label with a different path
 			var nodes = get_tree().get_nodes_in_group("ScoreValue")
 			if nodes.size() > 0:
-				nodes[0].text = str(score)
+				nodes[0].text = str(Global.score)
 			else:
 				print("Score label not found. Please add a Label node with the name 'Score' or add it to the 'score_label' group.")
 		
@@ -347,6 +348,7 @@ func _on_submit_pressed():
 		Global.turn -= 1
 		turns_value.text = str(Global.turn)
 		if Global.turn == 0:
+			game_ref.selesai_lebih_awal()
 			get_tree().change_scene_to_file("res://scenes/Ends.tscn")
 
 func find_words(board: Dictionary, horizontal: bool) -> Array:

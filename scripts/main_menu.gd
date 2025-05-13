@@ -24,6 +24,8 @@ func _on_nama_changed(new_text: String):
 
 func _ready():
 	line_edit.text_changed.connect(_on_nama_changed)
+	Global.muat_histori()
+
 	
 func go_menu():
 	main_button.visible = true
@@ -57,3 +59,7 @@ func _on_music_value_changed(value: float) -> void:
 
 func _on_back_pressed() -> void:
 	go_menu()
+
+
+func _on_History_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Score_Screen.tscn")

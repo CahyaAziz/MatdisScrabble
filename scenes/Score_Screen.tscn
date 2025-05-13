@@ -1,0 +1,206 @@
+[gd_scene load_steps=7 format=3 uid="uid://bu7bpvykel1wu"]
+
+[ext_resource type="Script" uid="uid://diy1so64iiqk" path="res://Scenes/score_screen.gd" id="1_rdmsy"]
+[ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="2_2eyjw"]
+[ext_resource type="Texture2D" uid="uid://8eoy0ha63eio" path="res://Assets/ButtonIcon/no.png" id="3_2eyjw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xd8kl"]
+bg_color = Color(0.145098, 0.168627, 0.203922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fffhw"]
+bg_color = Color(0.691905, 0.578674, 0.44761, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0fsb"]
+bg_color = Color(0.145098, 0.168627, 0.203922, 1)
+
+[node name="ScoreScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rdmsy")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 2593.0
+offset_bottom = 1455.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xd8kl")
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 190.0
+offset_right = 2559.0
+offset_bottom = 1441.0
+theme_override_constants/h_separation = 680
+theme_override_constants/v_separation = 30
+columns = 3
+
+[node name="Label_nama" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Nama"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 171
+
+[node name="Label_score" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 171
+
+[node name="Label_sisa waktu" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Sisa Waktu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random2" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random3" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random4" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random5" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random6" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random7" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random8" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random9" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random10" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random11" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random12" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random13" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random14" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random15" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+
+[node name="Label_Random16" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random17" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Random18" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1053.0
+offset_top = 42.0
+offset_right = 1512.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(0.992157, 0.85098, 0.615686, 1)
+theme_override_colors/font_shadow_color = Color(0.607938, 0.59107, 0.400034, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_2eyjw")
+theme_override_font_sizes/font_size = 100
+text = "Histori"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 34.0
+offset_right = 182.0
+offset_bottom = 161.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_fffhw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_u0fsb")
+icon = ExtResource("3_2eyjw")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

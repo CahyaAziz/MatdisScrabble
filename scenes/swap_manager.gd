@@ -160,6 +160,7 @@ func toggle_tile_selection(tile):
 		
 		# Make sure the indicator is removed and recreated to avoid any issues
 		if tile.has_node("SelectionIndicator"):
+			print("Remove indicator_if")
 			tile.get_node("SelectionIndicator").queue_free()
 		
 		print("Tile deselected")
@@ -168,8 +169,7 @@ func toggle_tile_selection(tile):
 		selected_tiles.append(tile)
 		
 		# Remove any existing indicator
-		if tile.has_node("SelectionIndicator"):
-			tile.get_node("SelectionIndicator").queue_free()
+		
 		
 		# Create a new indicator with proper settings
 		var indicator = ColorRect.new()
@@ -220,7 +220,5 @@ func perform_swap():
 	Global.turn -= 1
 	print(Global.turn)
 	turns_value.text = str(Global.turn)
-	if Global.turn == 0:
-		get_tree().change_scene_to_file("res://scenes/Ends.tscn")
-	elif Global.turn == 1:
+	if Global.turn == 1:
 		swap_button.disabled = true

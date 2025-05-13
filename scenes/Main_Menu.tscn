@@ -113,10 +113,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -221.5
-offset_top = -114.5
-offset_right = 207.5
-offset_bottom = 242.5
+offset_left = -275.5
+offset_top = -192.5
+offset_right = 295.5
+offset_bottom = 286.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
@@ -149,6 +149,20 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_wugcc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_wtjmy")
 text = "Option"
 
+[node name="Start2" type="Button" parent="MainButton"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wugcc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dnfjo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wugcc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wtjmy")
+text = "History"
+
 [node name="Exit" type="Button" parent="MainButton"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -171,16 +185,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -256.5
-offset_top = -324.5
-offset_right = 238.5
-offset_bottom = -131.5
+offset_left = -323.5
+offset_top = -490.5
+offset_right = 335.5
+offset_bottom = -234.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 20
 theme_override_fonts/font = ExtResource("3_ecnfn")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 200
 text = "LexIQ"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -406,6 +420,7 @@ uppercase = true
 
 [connection signal="pressed" from="MainButton/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButton/Option" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="MainButton/Start2" to="." method="_on_History_pressed"]
 [connection signal="pressed" from="MainButton/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Options/Back" to="." method="_on_back_options_pressed"]
 [connection signal="mouse_exited" from="Options/VBoxContainer/HBoxContainer/Music" to="Options/VBoxContainer/HBoxContainer/Music" method="_on_mouse_exited"]
