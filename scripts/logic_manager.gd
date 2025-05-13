@@ -3,6 +3,7 @@ extends Node
 @onready var turns_value: Label = $"../TopUI/HBoxContainer/MoveInfo/TurnsValue"
 
 var bag_ref
+var game_ref
 
 var accepted_words = []
 var previous_board := {}
@@ -56,6 +57,7 @@ var board_multipliers = {
 func _ready():
 	load_word_list()
 	bag_ref = $"../Bag"
+	game_ref = $".."
 
 func hide_warning():
 	print("Mulai countdown...")
@@ -346,6 +348,7 @@ func _on_submit_pressed():
 		Global.turn -= 1
 		turns_value.text = str(Global.turn)
 		if Global.turn == 0:
+			game_ref.selesai_lebih_awal()
 			get_tree().change_scene_to_file("res://scenes/Ends.tscn")
 
 func find_words(board: Dictionary, horizontal: bool) -> Array:

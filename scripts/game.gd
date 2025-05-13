@@ -3,7 +3,9 @@ extends Node2D
 @onready var nama: Label = $TopUI/HBoxContainer2/Panel/TextureRect/Nama
 @onready var timer: Timer = $Timer
 @onready var label: Label = $Label
-@onready var total_time_seconds : int = 10
+@onready var curr_seconds : int = 60*10
+const total_time_seconds = 60*10
+
 @onready var bag: Node2D = $Bag
 @onready var bag_2: Panel = $Bag2
 
@@ -57,26 +59,21 @@ func _ready():
 
 
 func _on_timer_timeout():
-	total_time_seconds -= 1
-	var m = int(total_time_seconds / 60)
-	var s = total_time_seconds % 60
+	curr_seconds -= 1
+	var m = int(curr_seconds / 60)
+	var s = curr_seconds % 60
 	
 	label.text = '%02d:%02d' % [m, s]
 	
 	# Ketika waktu habis, pindah ke scene "ends.tscn"
-	if total_time_seconds <= 0:
+	if curr_seconds <= 0:
 		timer.stop()
 		Global.sisa_waktu = 0 
 		get_tree().change_scene_to_file("res://Scenes/Ends.tscn")
 
 
 func selesai_lebih_awal():
-	Global.sisa_waktu = total_time_seconds
-	Global.histori.append({
-		"nama": Global.username,
-		"skor": Global.score,
-		"waktu": Global.sisa_waktu
-	})
+	Global.sisa_waktu = curr_seconds
 	get_tree().change_scene_to_file("res://Scenes/ScoreScreen.tscn")
 
 
