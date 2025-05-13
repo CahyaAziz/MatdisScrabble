@@ -11,6 +11,7 @@ func reset_game_state():
 	Global.is_first_move = true
 	Global.turn = 3  # Reset to default turn count
 	Global.board = {}  # Clear the board state
+	Global.score = 0
 	turns_value.text = str(Global.turn)
 	
 	

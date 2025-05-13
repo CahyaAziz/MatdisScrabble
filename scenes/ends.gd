@@ -5,7 +5,7 @@ extends Control
 func _ready():
 	winner.text = Global.username
 	skor.text = str(Global.score)
-	Global.histori.append({
+	Global.histori.insert(0, {
 		"nama": Global.username,
 		"skor": Global.score,
 		"waktu": Global.sisa_waktu
