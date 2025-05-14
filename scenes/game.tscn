@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bciwqel88673n" path="res://Assets/ButtonIcon/Bar.svg" id="6_ryrav"]
 [ext_resource type="Texture2D" uid="uid://djko33vy5f6gx" path="res://Assets/TileSets/A_Tile.svg" id="12_6uxt2"]
 [ext_resource type="Script" uid="uid://c1ia6bqf77udb" path="res://scripts/logic_manager.gd" id="12_dinhu"]
-[ext_resource type="Script" uid="uid://bsh2j7w6f7w2w" path="res://scenes/swap_manager.gd" id="12_pr1ej"]
+[ext_resource type="Script" path="res://scenes/swap_manager.gd" id="12_pr1ej"]
 [ext_resource type="Texture2D" uid="uid://de2jhvrgu41iy" path="res://Assets/TileSets/B_Tile.svg" id="13_ym3tv"]
 [ext_resource type="Texture2D" uid="uid://0f64nplg20w6" path="res://Assets/TileSets/C_Tile.svg" id="14_bwj6o"]
 [ext_resource type="Texture2D" uid="uid://bt1qprs7e5818" path="res://Assets/TileSets/D_Tile.svg" id="15_f3c8l"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://c60wb5i3pyrf0" path="res://Assets/TileSets/blank_Tile.svg" id="39_f3c8l"]
 [ext_resource type="Texture2D" uid="uid://qf2m5idq6up8" path="res://Assets/ButtonIcon/Group 2.png" id="39_ym3tv"]
 [ext_resource type="Texture2D" uid="uid://dhp3qg7f4itlv" path="res://Assets/ButtonIcon/ohno.png" id="40_f3c8l"]
+[ext_resource type="Script" uid="uid://cslmha3i2tbbo" path="res://scripts/definition.gd" id="43_05nbr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
 texture = ExtResource("1_80nbo")
@@ -203,13 +204,6 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr1ej"]
-bg_color = Color(0.366523, 0.361353, 0.435462, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_vef74")
@@ -1616,13 +1610,13 @@ offset_bottom = 347.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_bwj6o")
 
 [node name="Definition" type="Panel" parent="."]
-visible = false
 z_index = 3
 offset_left = 943.0
 offset_top = 530.0
 offset_right = 1648.0
 offset_bottom = 948.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ool0")
+script = ExtResource("43_05nbr")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Definition"]
 layout_mode = 0
@@ -1637,39 +1631,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Words Definitions"
 horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Definition/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Definition/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Ayam"
-
-[node name="ShowDefiniton" type="Button" parent="Definition/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-text = "🔽"
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Definition/VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_pr1ej")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Definition/VBoxContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 3
-alignment = 1
-
-[node name="Label" type="Label" parent="Definition/VBoxContainer/ScrollContainer/VBoxContainer"]
-custom_minimum_size = Vector2(450, 0)
-layout_mode = 2
-text = "unggas yang pada umumnya tidak dapat terbang, dapat dijinakkan dan dipelihara, berjengger, yang jantan berkokok dan bertaji, sedangkan yang betina berkotek"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="Button" type="Button" parent="Definition"]
 layout_mode = 0

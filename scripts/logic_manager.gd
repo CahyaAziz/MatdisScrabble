@@ -1,6 +1,7 @@
 extends Node
 @onready var valid: Panel = $"../Valid"
 @onready var turns_value: Label = $"../TopUI/HBoxContainer/MoveInfo/TurnsValue"
+@onready var definition: Panel = $"../Definition"
 
 var bag_ref
 var game_ref
@@ -300,6 +301,8 @@ func _on_submit_pressed():
 			turn_score += word_score
 			valid_words.append(word + " (" + str(word_score) + ")")
 			print("Word: " + word + ", Score: " + str(word_score))
+			if definition and definition.has_method("add_word_to_list"):
+				definition.add_word_to_list(word)
 
 	if invalid_words.size() > 0:
 		print("❌ Invalid words found: ", invalid_words)
@@ -350,6 +353,7 @@ func _on_submit_pressed():
 		if Global.turn == 0:
 			game_ref.selesai_lebih_awal()
 			get_tree().change_scene_to_file("res://scenes/Ends.tscn")
+
 
 func find_words(board: Dictionary, horizontal: bool) -> Array:
 	var found_words = []
