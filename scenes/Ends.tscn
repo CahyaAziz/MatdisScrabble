@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bx1w5qie7xm7p"]
 
-[ext_resource type="Script" uid="uid://b6abyp6aqhrte" path="res://scenes/ends.gd" id="1_fwpmy"]
+[ext_resource type="Script" uid="uid://b6abyp6aqhrte" path="res://Scenes/ends.gd" id="1_fwpmy"]
 [ext_resource type="Texture2D" uid="uid://oahheuo6spup" path="res://Assets/ButtonIcon/Frame 973 (2).png" id="1_ibbl8"]
 [ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="2_fwpmy"]
 [ext_resource type="AudioStream" uid="uid://cs1jxlt73ron3" path="res://Scrabble Music - Scrabble 1.mp3" id="4_ajog1"]

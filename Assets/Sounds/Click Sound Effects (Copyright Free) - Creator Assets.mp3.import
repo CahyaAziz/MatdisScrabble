@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1ovd2ws5eclh"
+path="res://.godot/imported/Click Sound Effects (Copyright Free) - Creator Assets.mp3-e0de1423df0ad76a785c4cba52f3a9ca.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Click Sound Effects (Copyright Free) - Creator Assets.mp3"
+dest_files=["res://.godot/imported/Click Sound Effects (Copyright Free) - Creator Assets.mp3-e0de1423df0ad76a785c4cba52f3a9ca.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

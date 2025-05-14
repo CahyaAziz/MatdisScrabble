@@ -7,6 +7,7 @@ extends Node
 @onready var reset_button = $"../GameplayButton/HBoxContainer/Reset"
 @onready var bag_button = $"../GameplayButton/HBoxContainer/Bag"
 @onready var turns_value: Label = $"../TopUI/HBoxContainer/MoveInfo/TurnsValue"
+@onready var sfx_suffle_start: AudioStreamPlayer = $"../sfx_suffle_start"
 
 
 # References to game systems
@@ -321,6 +322,8 @@ func perform_swap():
 	
 	# Exit swap mode
 	exit_swap_mode()
+	sfx_suffle_start.play()
+	
 	
 	# Reduces turn
 	Global.turn -= 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://kxljhkmdhsjv"]
+[gd_scene load_steps=75 format=3 uid="uid://kxljhkmdhsjv"]
 
 
 [ext_resource type="Texture2D" uid="uid://t6rdxrbjqvds" path="res://Assets/GridTiles/Tilemap.svg" id="1_80nbo"]
@@ -12,8 +12,8 @@
 [ext_resource type="Script" uid="uid://bws1rjijysee5" path="res://Assets/TileSets/scene/player_hand.gd" id="5_vtaks"]
 [ext_resource type="Script" uid="uid://ciwonlsjaoqml" path="res://Assets/TileSets/bag.gd" id="6_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://djko33vy5f6gx" path="res://Assets/TileSets/A_Tile.svg" id="12_6uxt2"]
-[ext_resource type="Script" path="res://scripts/logic_manager.gd" id="12_dinhu"]
-[ext_resource type="Script" uid="uid://bsh2j7w6f7w2w" path="res://scenes/swap_manager.gd" id="12_pr1ej"]
+[ext_resource type="Script" uid="uid://c1ia6bqf77udb" path="res://scripts/logic_manager.gd" id="12_dinhu"]
+[ext_resource type="Script" uid="uid://bsh2j7w6f7w2w" path="res://Scenes/swap_manager.gd" id="12_pr1ej"]
 [ext_resource type="Texture2D" uid="uid://mffay661ce6p" path="res://Assets/ButtonIcon/Vector.svg" id="13_05nbr"]
 [ext_resource type="Texture2D" uid="uid://de2jhvrgu41iy" path="res://Assets/TileSets/B_Tile.svg" id="13_ym3tv"]
 [ext_resource type="Texture2D" uid="uid://0f64nplg20w6" path="res://Assets/TileSets/C_Tile.svg" id="14_bwj6o"]
@@ -45,8 +45,11 @@
 [ext_resource type="Texture2D" uid="uid://dhp3qg7f4itlv" path="res://Assets/ButtonIcon/ohno.png" id="40_f3c8l"]
 [ext_resource type="AudioStream" uid="uid://cs1jxlt73ron3" path="res://Scrabble Music - Scrabble 1.mp3" id="43_0sl42"]
 [ext_resource type="Script" uid="uid://dg4w2exky2eud" path="res://scripts/audio_stream_player_2.gd" id="44_oaba0"]
-[ext_resource type="Script" uid="uid://cslmha3i2tbbo" path="res://scripts/definition.gd" id="43_05nbr"]
-
+[ext_resource type="Script" path="res://scripts/definition.gd" id="43_05nbr"]
+[ext_resource type="AudioStream" uid="uid://cjke87uy1g4f4" path="res://Assets/Sounds/salah.mp3" id="44_631el"]
+[ext_resource type="AudioStream" uid="uid://cfmvyqjqifmxs" path="res://Assets/Sounds/Benar.mp3" id="45_vs120"]
+[ext_resource type="AudioStream" uid="uid://iqn0rc5rcv6t" path="res://Assets/Sounds/kik.mp3" id="46_v2cs8"]
+[ext_resource type="AudioStream" uid="uid://c3a27cjql7cq8" path="res://Assets/Sounds/suffle.mp3" id="47_32sfa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
 texture = ExtResource("1_80nbo")
@@ -1754,6 +1757,25 @@ script = ExtResource("44_oaba0")
 stream = ExtResource("43_0sl42")
 autoplay = true
 bus = &"Music"
+
+[node name="sfx_salah_start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_631el")
+bus = &"SFX"
+playback_type = 1
+
+[node name="sfx_benar_start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("45_vs120")
+bus = &"SFX"
+playback_type = 1
+
+[node name="sfx_balok_star" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("46_v2cs8")
+bus = &"SFX"
+
+[node name="sfx_suffle_start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("47_32sfa")
+bus = &"SFX"
+
 [node name="ResignPanel" type="Panel" parent="."]
 visible = false
 z_index = 5

@@ -2,6 +2,7 @@ extends Node2D
 
 const collision_mask_tile = 1
 const collision_mask_slot = 2
+@onready var sfx_balok_star: AudioStreamPlayer = $"../sfx_balok_star"
 
 var tile_drag
 var screen_size
@@ -24,33 +25,41 @@ func _input(event: InputEvent):
 			var tile = raycast_check()
 			if tile:
 				start_drag(tile)
+				sfx_balok_star.play()
 		else:
 			if tile_drag:
 				finish_drag()
+				sfx_balok_star.play()
 
 func start_drag(tile):
 	tile_drag = tile
 	tile.scale = Vector2(1, 1)
 
+	if tile.has_node("sfx_balok_star"):
+		tile.get_node("sfx_balok_star").play()  # Suara saat balok diangkat
+
+
 func finish_drag():
 	tile_drag.scale = Vector2(1.05, 1.05)
-
 	var new_slot = raycast_check_slot()
 
-	# If we were in a previous slot, free it
 	if tile_drag.current_slot and is_instance_valid(tile_drag.current_slot):
 		tile_drag.current_slot.remove_tile()
 		tile_drag.current_slot = null
 
-	# Snap to new slot if it's free
 	if new_slot and not new_slot.is_occupied():
 		tile_drag.position = new_slot.position
 		new_slot.assign_tile(tile_drag)
 		tile_drag.current_slot = new_slot
+
+		# ✅ Suara saat balok ditaruh
+		if tile_drag.has_node("sfx_balok_start"):
+			tile_drag.get_node("sfx_balok_star").play()
 	else:
 		player_hand_ref.add_tile_hand(tile_drag)
 
 	tile_drag = null
+
 
 func connect_tile_signal(tile):
 	tile.connect("hovered", on_hover_tile)
