@@ -372,7 +372,7 @@ func _on_submit_pressed():
 		turns_value.text = str(Global.turn)
 		if Global.turn == 0:
 			game_ref.selesai_lebih_awal()
-			get_tree().change_scene_to_file("res://scenes/Ends.tscn")
+			
 
 
 func find_words(board: Dictionary, horizontal: bool) -> Array:

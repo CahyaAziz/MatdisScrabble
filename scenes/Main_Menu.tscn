@@ -314,7 +314,6 @@ bus = &"Music"
 script = ExtResource("7_skpiv")
 
 [node name="Mulai_menu" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 936.0
 offset_top = 547.0
@@ -405,10 +404,10 @@ caret_blink_interval = 0.34
 
 [node name="warning_label" type="Label" parent="Mulai_menu/TextureRect/LineEdit"]
 layout_mode = 0
-offset_left = -103.203
-offset_top = -249.11
-offset_right = 391.797
-offset_bottom = -218.11
+offset_left = -111.032
+offset_top = -170.819
+offset_right = 383.968
+offset_bottom = -139.819
 theme_override_colors/font_color = Color(1, 0.027451, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.4, 0.00784314, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
