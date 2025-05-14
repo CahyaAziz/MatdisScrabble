@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bciwqel88673n" path="res://Assets/ButtonIcon/Bar.svg" id="6_ryrav"]
 [ext_resource type="Texture2D" uid="uid://djko33vy5f6gx" path="res://Assets/TileSets/A_Tile.svg" id="12_6uxt2"]
 [ext_resource type="Script" uid="uid://c1ia6bqf77udb" path="res://scripts/logic_manager.gd" id="12_dinhu"]
-[ext_resource type="Script" path="res://scenes/swap_manager.gd" id="12_pr1ej"]
+[ext_resource type="Script" uid="uid://bsh2j7w6f7w2w" path="res://scenes/swap_manager.gd" id="12_pr1ej"]
 [ext_resource type="Texture2D" uid="uid://de2jhvrgu41iy" path="res://Assets/TileSets/B_Tile.svg" id="13_ym3tv"]
 [ext_resource type="Texture2D" uid="uid://0f64nplg20w6" path="res://Assets/TileSets/C_Tile.svg" id="14_bwj6o"]
 [ext_resource type="Texture2D" uid="uid://bt1qprs7e5818" path="res://Assets/TileSets/D_Tile.svg" id="15_f3c8l"]
@@ -42,7 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://c60wb5i3pyrf0" path="res://Assets/TileSets/blank_Tile.svg" id="39_f3c8l"]
 [ext_resource type="Texture2D" uid="uid://qf2m5idq6up8" path="res://Assets/ButtonIcon/Group 2.png" id="39_ym3tv"]
 [ext_resource type="Texture2D" uid="uid://dhp3qg7f4itlv" path="res://Assets/ButtonIcon/ohno.png" id="40_f3c8l"]
-[ext_resource type="Script" uid="uid://cslmha3i2tbbo" path="res://scripts/definition.gd" id="43_05nbr"]
+[ext_resource type="Script" path="res://scripts/definition.gd" id="43_05nbr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
 texture = ExtResource("1_80nbo")
