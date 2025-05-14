@@ -1,6 +1,7 @@
 extends Control
 @onready var winner: Label = $Winner
 @onready var skor: Label = $Skor
+@onready var menu_click: AudioStreamPlayer = $MenuClick
 
 func _ready():
 	winner.text = Global.username
@@ -19,4 +20,5 @@ func _ready():
 	Global.simpan_histori()
 
 func _on_button_pressed() -> void:
+	menu_click.play()
 	get_tree().change_scene_to_file("res://scenes/Main_Menu.tscn")

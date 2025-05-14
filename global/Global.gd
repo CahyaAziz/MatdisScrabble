@@ -30,7 +30,7 @@ func muat_histori():
 
 var is_first_move = true
 
-var turn = 3
+var turn = 15
 var board = {}
 
 var player_hand = []

@@ -1,15 +1,16 @@
-[gd_scene load_steps=25 format=3 uid="uid://cj26m1ltri7sf"]
+[gd_scene load_steps=26 format=3 uid="uid://cj26m1ltri7sf"]
 
 [ext_resource type="Script" uid="uid://bl25ombvodojc" path="res://scripts/main_menu.gd" id="1_7260r"]
 [ext_resource type="Texture2D" uid="uid://b8smgov764boy" path="res://4a3a0171-374d-43e8-b41d-74a8d4d1eb66.jpg" id="2_7260r"]
 [ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="3_ecnfn"]
-[ext_resource type="Script" path="res://scripts/audio_control.gd" id="4_kiw3d"]
-[ext_resource type="Script" path="res://scripts/sfx.gd" id="5_8wqjl"]
+[ext_resource type="Script" uid="uid://syow0uu01wa1" path="res://scripts/audio_control.gd" id="4_kiw3d"]
+[ext_resource type="Script" uid="uid://jf1sted30gtr" path="res://scripts/sfx.gd" id="5_8wqjl"]
 [ext_resource type="AudioStream" uid="uid://cs1jxlt73ron3" path="res://Scrabble Music - Scrabble 1.mp3" id="6_73mli"]
-[ext_resource type="Script" path="res://scripts/audio_stream_player_2.gd" id="7_skpiv"]
-[ext_resource type="Script" path="res://scripts/mulai_menu.gd" id="8_mwmg2"]
+[ext_resource type="Script" uid="uid://dg4w2exky2eud" path="res://scripts/audio_stream_player_2.gd" id="7_skpiv"]
+[ext_resource type="Script" uid="uid://d3nxu7dlceyst" path="res://scripts/mulai_menu.gd" id="8_mwmg2"]
 [ext_resource type="Texture2D" uid="uid://daf8lnnilrqjc" path="res://Assets/ButtonIcon/Rectangle 144 (1).png" id="9_exptw"]
 [ext_resource type="Texture2D" uid="uid://dnvanmgh52hxx" path="res://Assets/ButtonIcon/salah.png" id="10_dsunt"]
+[ext_resource type="AudioStream" uid="uid://iqn0rc5rcv6t" path="res://Assets/Sounds/kik.mp3" id="11_l3124"]
 
 [sub_resource type="FontFile" id="FontFile_5cvai"]
 cache/0/12/0/ascent = 0.0
@@ -29,7 +30,7 @@ default_font_size = 12
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtjmy"]
 texture = ExtResource("2_7260r")
-modulate_color = Color(0.408329, 0.408329, 0.408329, 1)
+modulate_color = Color(0.207843, 0.207843, 0.207843, 0.807843)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wugcc"]
 
@@ -315,7 +316,13 @@ autoplay = true
 bus = &"Music"
 script = ExtResource("7_skpiv")
 
+[node name="MenuClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_l3124")
+volume_db = -3.0
+bus = &"SFX"
+
 [node name="Mulai_menu" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 936.0
 offset_top = 547.0

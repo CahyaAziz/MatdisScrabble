@@ -9,7 +9,7 @@ func reset_game_state():
 	
 	# Reset global variables
 	Global.is_first_move = true
-	Global.turn = 3  # Reset to default turn count
+	Global.turn = 15  # Reset to default turn count
 	Global.board = {}  # Clear the board state
 	Global.score = 0
 	turns_value.text = str(Global.turn)
@@ -50,6 +50,8 @@ func reset_game_state():
 	'Y', 'Y',  # 2 Y's
 	'Z'   # 1 Z
 	]
+	
+	Global.player_bag = player_bag
 	
 	# Reset the logic manager's previous board state
 	var logic_manager = get_node_or_null("/root/GameScene/LogicManager")

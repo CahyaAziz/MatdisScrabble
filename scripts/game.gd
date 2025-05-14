@@ -46,7 +46,7 @@ func _ready():
 		
 	Global.player_bag.shuffle()
 	sfx_suffle_start.play()
-	$Bag.debug_draw_tiles(["N","A","D","A", "K", "A", "N"])
+	$Bag.draw_tiles(7)
 	
 	# Initialize the swap manager
 	if !has_node("SwapManager"):
