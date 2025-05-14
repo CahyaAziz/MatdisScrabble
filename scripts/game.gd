@@ -6,11 +6,12 @@ extends Node2D
 @onready var curr_seconds : int = 60*10
 const total_time_seconds = 60*10
 
+@onready var resign_panel: Panel = $ResignPanel
+
+
 @onready var bag: Node2D = $Bag
 @onready var bag_2: Panel = $Bag2
 
-@onready var scroll_container: ScrollContainer = $Definition/VBoxContainer/ScrollContainer
-@onready var toggle_button: Button = $Definition/VBoxContainer/HBoxContainer/ShowDefiniton
 @onready var other: Button = $GameplayButton/HBoxContainer/Other
 @onready var definition: Panel = $Definition
 
@@ -44,8 +45,6 @@ func _ready():
 		
 	Global.player_bag.shuffle()
 	$Bag.debug_draw_tiles(["N","A","D","A", "K", "A", "N"])
-	scroll_container.visible = false
-	toggle_button.pressed.connect(_on_toggle_definition)
 	
 	# Initialize the swap manager
 	if !has_node("SwapManager"):
@@ -75,7 +74,7 @@ func _on_timer_timeout():
 
 func selesai_lebih_awal():
 	Global.sisa_waktu = curr_seconds
-	get_tree().change_scene_to_file("res://Scenes/ScoreScreen.tscn")
+	get_tree().change_scene_to_file("res://scenes/Ends.tscn")
 
 
 func _on_button_3_pressed() -> void:
@@ -124,11 +123,6 @@ func update_bag_counts():
 
 var is_expanded := false
 
-func _on_toggle_definition():
-	is_expanded = !is_expanded
-	scroll_container.visible = is_expanded
-	toggle_button.text = "🔼" if is_expanded else "🔽"
-
 func _on_other_pressed() -> void:
 	definition_menu()
 
@@ -136,3 +130,12 @@ func _on_bag_pressed() -> void:
 	update_bag_counts()
 	bag_menu()
 	
+func _on_resign_pressed() -> void:
+	resign_panel.visible = true
+
+func _on_yes_pressed() -> void:
+	print("Ending...")
+	selesai_lebih_awal()
+
+func _on_no_pressed() -> void:
+	resign_panel.visible = false
