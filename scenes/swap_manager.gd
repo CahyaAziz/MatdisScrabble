@@ -7,6 +7,7 @@ extends Node
 @onready var reset_button = $"../GameplayButton/HBoxContainer/Reset"
 @onready var bag_button = $"../GameplayButton/HBoxContainer/Bag"
 @onready var turns_value: Label = $"../TopUI/HBoxContainer/MoveInfo/TurnsValue"
+@onready var sfx_suffle_start: AudioStreamPlayer = $"../sfx_suffle_start"
 
 
 # References to game systems
@@ -17,7 +18,9 @@ extends Node
 # State tracking
 var is_swap_mode = false
 var selected_tiles = []
-var original_tile_positions = {}
+
+# Track mouse position for tile detection
+var last_mouse_position = Vector2.ZERO
 
 func _ready():
 	# Connect the swap button signal
@@ -27,6 +30,43 @@ func _ready():
 		print("Swap button connected successfully")
 	else:
 		print("ERROR: Swap button not found!")
+	
+	# Connect the reset button signal
+	if reset_button:
+		if !reset_button.is_connected("pressed", _on_reset_button_pressed):
+			reset_button.pressed.connect(_on_reset_button_pressed)
+		print("Reset button connected successfully")
+	else:
+		print("ERROR: Reset button not found!")
+	
+	# Initialize selection indicators for all tiles
+	for tile in Global.player_hand:
+		if is_instance_valid(tile) and !tile.has_node("SelectionIndicator"):
+			var indicator = ColorRect.new()
+			indicator.name = "SelectionIndicator"
+			indicator.color = Color(0.2, 0.8, 0.2, 0.5)  # Semi-transparent green
+			indicator.size = Vector2(60, 60)  # Match tile size
+			indicator.position = Vector2(-30, -30)  # Center on tile
+			indicator.z_index = -1  # Place behind the tile
+			indicator.visible = false
+			tile.add_child(indicator)
+
+func _process(delta):
+	# Emergency exit
+	if Input.is_action_just_pressed("ui_cancel") and is_swap_mode:
+		print("Emergency exit from swap mode")
+		exit_swap_mode()
+	
+	# Handle tile selection in swap mode
+	if is_swap_mode and Input.is_action_just_pressed("ui_select"):  # Left mouse click
+		var mouse_pos = get_viewport().get_mouse_position()
+		var tile = find_tile_at_position(mouse_pos)
+		if tile:
+			toggle_tile_selection(tile)
+	
+	# Disable swap button when only one turn left
+	if swap_button and is_instance_valid(swap_button):
+		swap_button.disabled = (Global.turn <= 1)
 
 func _input(event):
 	if !is_swap_mode:
@@ -42,6 +82,9 @@ func _input(event):
 		var closest_distance = 100.0  # Maximum detection distance
 		
 		for tile in Global.player_hand:
+			if !is_instance_valid(tile):
+				continue
+				
 			var distance = mouse_pos.distance_to(tile.global_position)
 			print("Tile ", tile.letter, " at distance ", distance)
 			
@@ -53,6 +96,23 @@ func _input(event):
 			print("Selected tile: ", closest_tile.letter)
 			toggle_tile_selection(closest_tile)
 
+func find_tile_at_position(position):
+	# Simple distance-based detection
+	var closest_tile = null
+	var closest_distance = 100.0  # Maximum detection distance
+	
+	for tile in Global.player_hand:
+		if !is_instance_valid(tile):
+			continue
+			
+		var distance = position.distance_to(tile.global_position)
+		
+		if distance < closest_distance:
+			closest_tile = tile
+			closest_distance = distance
+	
+	return closest_tile
+
 func _on_swap_button_pressed():
 	print("Swap button pressed, current mode: ", is_swap_mode)
 	
@@ -63,113 +123,154 @@ func _on_swap_button_pressed():
 		# Enter swap mode
 		enter_swap_mode()
 
+func _on_reset_button_pressed():
+	print("Reset button pressed, retrieving tiles from board")
+	retrieve_tiles_from_board()
+
+func retrieve_tiles_from_board():
+	# Find all tile slots with tiles that are not locked
+	var tile_slots = get_tree().get_nodes_in_group("tile_slots")
+	var tiles_to_retrieve = []
+	
+	for slot in tile_slots:
+		if slot.is_occupied() and slot.occupied_tile and is_instance_valid(slot.occupied_tile):
+			var tile = slot.occupied_tile
+			
+			# Check if the tile is valid and has the required node
+			if is_instance_valid(tile) and tile.has_node("Area2D") and tile.get_node("Area2D").has_node("CollisionShape2D"):
+				var collision = tile.get_node("Area2D/CollisionShape2D")
+				
+				# Check if the collision shape is not disabled (tile is not locked)
+				if !collision.disabled:
+					tiles_to_retrieve.append({"tile": tile, "slot": slot})
+	
+	print("Found ", tiles_to_retrieve.size(), " tiles to retrieve")
+	
+	# Return tiles to hand
+	for item in tiles_to_retrieve:
+		var tile = item["tile"]
+		var slot = item["slot"]
+		
+		# Double check that the tile is still valid
+		if is_instance_valid(tile) and is_instance_valid(slot):
+			# Remove from slot
+			slot.remove_tile()
+			
+			# Add back to hand if not already there and still valid
+			if is_instance_valid(tile) and tile not in Global.player_hand:
+				Global.player_hand.append(tile)
+	
+	# Update hand positions if player_hand is valid
+	if is_instance_valid(player_hand):
+		player_hand.update_hand_positions()
+
 func enter_swap_mode():
 	print("Entering swap mode")
 	is_swap_mode = true
 	
 	# Visual indicator for swap button being "held down"
-	swap_button.modulate = Color(0.7, 0.7, 1.0)  # Change color to indicate active state
+	if swap_button and is_instance_valid(swap_button):
+		swap_button.modulate = Color(0.7, 0.7, 1.0)  # Change color to indicate active state
 	
 	# Disable other buttons
-	others_button.disabled = true
-	submit_button.disabled = true
-	reset_button.disabled = true
-	bag_button.disabled = true
+	if others_button and is_instance_valid(others_button):
+		others_button.disabled = true
+	if submit_button and is_instance_valid(submit_button):
+		submit_button.disabled = true
+	if reset_button and is_instance_valid(reset_button):
+		reset_button.disabled = true
+	if bag_button and is_instance_valid(bag_button):
+		bag_button.disabled = true
 	
-	# Store original tile positions
-	original_tile_positions.clear()
-	for tile in Global.player_hand:
-		original_tile_positions[tile] = tile.position
+	# Retrieve any tiles from the board first
+	retrieve_tiles_from_board()
 	
-	# Completely disable the tile manager
-	if tile_manager:
-		# Save the original state
-		tile_manager.set_meta("original_process", tile_manager.is_processing())
-		tile_manager.set_meta("original_input", tile_manager.is_processing_input())
-		
-		# Disable processing
-		tile_manager.set_process(false)
-		tile_manager.set_process_input(false)
-		
-		# Disable all Area2D collision shapes in the tile manager
-		for child in tile_manager.get_children():
-			if child.has_node("Area2D"):
-				var area = child.get_node("Area2D")
-				if area.has_node("CollisionShape2D"):
-					area.get_node("CollisionShape2D").disabled = true
-	
-	# Add selection indicators to all tiles
-	for tile in Global.player_hand:
-		if !tile.has_node("SelectionIndicator"):
-			var indicator = ColorRect.new()
-			indicator.name = "SelectionIndicator"
-			indicator.color = Color(0.2, 0.8, 0.2, 0.5)  # Semi-transparent green
-			indicator.size = Vector2(60, 60)  # Match tile size
-			indicator.position = Vector2(-30, -30)  # Center on tile
-			indicator.z_index = -1  # Place behind the tile
-			indicator.visible = false
-			tile.add_child(indicator)
+	# Disable tile dragging
+	disable_tile_dragging()
 	
 	# Clear any previously selected tiles
 	selected_tiles.clear()
+	
+	# Clear ALL selection visuals to start fresh
+	for tile in Global.player_hand:
+		if is_instance_valid(tile):
+			remove_selection_indicators(tile)
 
 func exit_swap_mode():
 	print("Exiting swap mode")
 	is_swap_mode = false
 	
 	# Restore swap button visual
-	swap_button.modulate = Color(1, 1, 1)  # Reset to normal color
+	if swap_button and is_instance_valid(swap_button):
+		swap_button.modulate = Color(1, 1, 1)  # Reset to normal color
 	
 	# Re-enable other buttons
-	others_button.disabled = false
-	submit_button.disabled = false
-	reset_button.disabled = false
-	bag_button.disabled = false
+	if others_button and is_instance_valid(others_button):
+		others_button.disabled = false
+	if submit_button and is_instance_valid(submit_button):
+		submit_button.disabled = false
+	if reset_button and is_instance_valid(reset_button):
+		reset_button.disabled = false
+	if bag_button and is_instance_valid(bag_button):
+		bag_button.disabled = false
 	
-	# Restore tile manager state
-	if tile_manager:
-		# Restore original processing state
-		if tile_manager.has_meta("original_process"):
-			tile_manager.set_process(tile_manager.get_meta("original_process"))
-		if tile_manager.has_meta("original_input"):
-			tile_manager.set_process_input(tile_manager.get_meta("original_input"))
-		
-		# Re-enable all Area2D collision shapes
-		for child in tile_manager.get_children():
-			if child.has_node("Area2D"):
-				var area = child.get_node("Area2D")
-				if area.has_node("CollisionShape2D"):
-					area.get_node("CollisionShape2D").disabled = false
+	# Re-enable tile dragging
+	enable_tile_dragging()
 	
-	# Clear selection visuals
+	# Clear selection visuals - more thorough approach
 	for tile in Global.player_hand:
-		if tile.has_node("SelectionIndicator"):
-			tile.get_node("SelectionIndicator").visible = false
+		if is_instance_valid(tile):
+			remove_selection_indicators(tile)
 	
 	# Clear selected tiles array
 	selected_tiles.clear()
 
-# Update the toggle_tile_selection function in swap_manager.gd
+func disable_tile_dragging():
+	# Disable the tile manager's ability to drag tiles
+	if tile_manager and is_instance_valid(tile_manager):
+		tile_manager.set_process(false)
+		tile_manager.set_process_input(false)
+
+func enable_tile_dragging():
+	# Re-enable the tile manager's ability to drag tiles
+	if tile_manager and is_instance_valid(tile_manager):
+		tile_manager.set_process(true)
+		tile_manager.set_process_input(true)
+
+func remove_selection_indicators(tile):
+	# Check if the tile is valid
+	if !is_instance_valid(tile):
+		return
+		
+	# Find and remove ALL nodes with "SelectionIndicator" in their name
+	var children = tile.get_children()
+	for i in range(children.size() - 1, -1, -1):  # Loop backwards to safely remove
+		var child = children[i]
+		if is_instance_valid(child) and "SelectionIndicator" in child.name:
+			child.queue_free()
 
 func toggle_tile_selection(tile):
+	# Check if the tile is valid
+	if !is_instance_valid(tile):
+		print("Invalid tile, cannot toggle selection")
+		return
+		
 	print("Toggling selection for tile: ", tile.letter)
 	
 	if tile in selected_tiles:
 		# Deselect tile
 		selected_tiles.erase(tile)
 		
-		# Make sure the indicator is removed and recreated to avoid any issues
-		if tile.has_node("SelectionIndicator"):
-			print("Remove indicator_if")
-			tile.get_node("SelectionIndicator").queue_free()
+		# Properly remove ALL selection indicators
+		remove_selection_indicators(tile)
 		
 		print("Tile deselected")
 	else:
 		# Select tile
 		selected_tiles.append(tile)
 		
-		# Remove any existing indicator
-		
+		# Remove any existing indicators first
+		remove_selection_indicators(tile)
 		
 		# Create a new indicator with proper settings
 		var indicator = ColorRect.new()
@@ -194,6 +295,10 @@ func perform_swap():
 	
 	# Return selected tiles to the bag
 	for tile in selected_tiles:
+		# Check if the tile is still valid
+		if !is_instance_valid(tile):
+			continue
+			
 		# Add the letter back to the bag
 		Global.player_bag.append(tile.letter)
 		print("Returning ", tile.letter, " to bag")
@@ -208,17 +313,19 @@ func perform_swap():
 	Global.player_bag.shuffle()
 	
 	# Draw new tiles
-	bag.draw_tiles(selected_tiles.size())
+	if bag and is_instance_valid(bag):
+		bag.draw_tiles(selected_tiles.size())
 	
 	# Update hand positions
-	player_hand.update_hand_positions()
+	if player_hand and is_instance_valid(player_hand):
+		player_hand.update_hand_positions()
 	
 	# Exit swap mode
 	exit_swap_mode()
+	sfx_suffle_start.play()
+	
 	
 	# Reduces turn
 	Global.turn -= 1
 	print(Global.turn)
 	turns_value.text = str(Global.turn)
-	if Global.turn == 1:
-		swap_button.disabled = true

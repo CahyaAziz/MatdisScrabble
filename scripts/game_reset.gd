@@ -22,51 +22,33 @@ func reset_game_state():
 	Global.player_hand.clear()
 	
 	# Reset player bag (restore all tiles)
-	Global.player_bag = [
-		# 1-point letters
-		'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A',
-		'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A',
-		'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I',
-		'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I',
-		'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N', 'N',
-		'N', 'N', 'N', 'N', 'N', 'N', 'N',
-		'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E',
-		'E', 'E', 'E', 'E', 'E', 'E',
-		'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U',
-		'U', 'U', 'U', 'U', 'U',
-		'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
-		'R', 'R',
-		'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T',
-		'T',
-		
-		# 2-point letters
-		'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S', 'S',
-		'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L',
-		'O', 'O', 'O', 'O', 'O', 'O', 'O',
-		'M', 'M', 'M', 'M', 'M', 'M',
-		'K', 'K', 'K', 'K', 'K', 'K',
-		'D', 'D', 'D', 'D', 'D',
-		
-		# 3-point letters
-		'G', 'G', 'G', 'G', 'G',
-		'B', 'B', 'B', 'B', 'B',
-		'P', 'P', 'P', 'P',
-		
-		# 4-point letters
-		'Y', 'Y', 'Y', 'Y',
-		'H', 'H', 'H', 'H',
-		
-		# 5-point letters
-		'C', 'C', 'C', 'C',
-		'J', 'J',
-		
-		# 8-point letters
-		'W', 'W',
-		'Q',
-		'V',
-		
-		# Blank tiles
-		'blank', 'blank'
+	var player_bag = [
+	'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A',  # 12 A's (-1)
+	'B', 'B', 'B',  # 3 B's
+	'C', 'C',  # 2 C's
+	'D', 'D', 'D', 'D', 'D',  # 5 D's
+	'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E',  # 9 E's (-1)
+	'F',  # 1 F
+	'G', 'G', 'G', 'G',  # 4 G's
+	'H', 'H', 'H',  # 3 H's
+	'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I',  # 8 I's (-1)
+	'J', 'J',  # 2 J's
+	'K', 'K', 'K', 'K', 'K',  # 5 K's (-1)
+	'L', 'L', 'L', 'L',  # 4 L's
+	'M', 'M', 'M', 'M',  # 4 M's
+	'N', 'N', 'N', 'N', 'N', 'N',  # 6 N's (-1)
+	'O', 'O', 'O', 'O', 'O',  # 5 O's
+	'P', 'P', 'P',  # 3 P's
+	'Q',  # 1 Q
+	'R', 'R', 'R', 'R', 'R',  # 5 R's (-1)
+	'S', 'S', 'S', 'S',  # 4 S's
+	'T', 'T', 'T', 'T',  # 5 T's (-1)
+	'U', 'U', 'U', 'U',  # 4 U's
+	'V',  # 1 V
+	'W',  # 1 W
+	'X',  # 1 X
+	'Y', 'Y',  # 2 Y's
+	'Z'   # 1 Z
 	]
 	
 	# Reset the logic manager's previous board state
