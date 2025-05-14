@@ -10753,7 +10753,7 @@ penjuluran
 penjunjung
 penjuru
 penjurusan
-penodaan
+noda
 penodongan
 penolong
 penonjolan
