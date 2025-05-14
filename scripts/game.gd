@@ -5,6 +5,7 @@ extends Node2D
 @onready var label: Label = $Label
 @onready var curr_seconds : int = 60*10
 const total_time_seconds = 60*10
+@onready var sfx_suffle_start: AudioStreamPlayer = $sfx_suffle_start
 
 @onready var resign_panel: Panel = $ResignPanel
 
@@ -44,6 +45,7 @@ func _ready():
 		game_reset.reset_game_state()
 		
 	Global.player_bag.shuffle()
+	sfx_suffle_start.play()
 	$Bag.debug_draw_tiles(["N","A","D","A", "K", "A", "N"])
 	
 	# Initialize the swap manager

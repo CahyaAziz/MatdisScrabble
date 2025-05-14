@@ -2,6 +2,20 @@ extends Node
 @onready var valid: Panel = $"../Valid"
 @onready var turns_value: Label = $"../TopUI/HBoxContainer/MoveInfo/TurnsValue"
 @onready var definition: Panel = $"../Definition"
+@onready var sfx_salah_start: AudioStreamPlayer = $"../sfx_salah_start"
+@onready var sfx_benar_start: AudioStreamPlayer = $"../sfx_benar_start"
+
+func play_benar_clip():
+	sfx_benar_start.play()
+	sfx_benar_start.seek(1.0)  # mulai dari detik ke-3
+	await get_tree().create_timer(4.0).timeout  # tunggu 2 detik (sampai detik ke-5)
+	sfx_benar_start.stop()
+
+func play_salah_clip():
+	sfx_salah_start.play()
+	sfx_salah_start.seek(1.0)  # mulai dari detik ke-3
+	await get_tree().create_timer(4.0).timeout  # tunggu 2 detik (sampai detik ke-5)
+	sfx_salah_start.stop()
 
 var bag_ref
 var game_ref
@@ -245,6 +259,7 @@ func _on_submit_pressed():
 	if not are_new_tiles_connected(current_move):
 		print("❌ All new tiles must be connected in one group.")
 		valid.visible = true
+		play_salah_clip()
 		hide_warning()
 		return
 
@@ -252,6 +267,7 @@ func _on_submit_pressed():
 		if not current_move.has(Vector2(7, 7)):
 			print("❌ First move must cover the center tile (H8).")
 			valid.visible = true
+			play_salah_clip()
 			hide_warning()
 			return
 	else:
@@ -262,6 +278,7 @@ func _on_submit_pressed():
 			if not connected:
 				print("❌ New tiles must connect to existing tiles.")
 				valid.visible = true
+				play_salah_clip()
 				hide_warning()
 				return
 
@@ -284,6 +301,7 @@ func _on_submit_pressed():
 	if words_with_new_tiles.size() == 0:
 		print("⚠️ No complete words found. Add more tiles.")
 		valid.visible = true
+		sfx_salah_start.play()
 		hide_warning()
 		return
 	
@@ -307,6 +325,7 @@ func _on_submit_pressed():
 	if invalid_words.size() > 0:
 		print("❌ Invalid words found: ", invalid_words)
 		valid.visible = true
+		play_salah_clip()
 		hide_warning()
 	else:
 		# Add bonus for using all 7 tiles
@@ -316,6 +335,7 @@ func _on_submit_pressed():
 			
 		# Update total score
 		Global.score += turn_score
+		play_benar_clip()
 		print("✅ All words are valid! Turn score: " + str(turn_score) + ", Total score: " + str(Global.score))
 		print("Words formed: " + ", ".join(valid_words))
 		
@@ -352,7 +372,7 @@ func _on_submit_pressed():
 		turns_value.text = str(Global.turn)
 		if Global.turn == 0:
 			game_ref.selesai_lebih_awal()
-			get_tree().change_scene_to_file("res://scenes/Ends.tscn")
+			
 
 
 func find_words(board: Dictionary, horizontal: bool) -> Array:

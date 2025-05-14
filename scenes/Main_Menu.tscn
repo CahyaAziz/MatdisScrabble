@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://bl25ombvodojc" path="res://scripts/main_menu.gd" id="1_7260r"]
 [ext_resource type="Texture2D" uid="uid://mddu2d1somlh" path="res://Assets/GridTiles/Frame 979.png" id="2_l3124"]
 [ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="3_ecnfn"]
-[ext_resource type="Script" uid="uid://syow0uu01wa1" path="res://scripts/audio_control.gd" id="4_kiw3d"]
-[ext_resource type="Script" uid="uid://jf1sted30gtr" path="res://scripts/sfx.gd" id="5_8wqjl"]
+[ext_resource type="Script" path="res://scripts/audio_control.gd" id="4_kiw3d"]
+[ext_resource type="Script" path="res://scripts/sfx.gd" id="5_8wqjl"]
 [ext_resource type="AudioStream" uid="uid://cs1jxlt73ron3" path="res://Scrabble Music - Scrabble 1.mp3" id="6_73mli"]
-[ext_resource type="Script" uid="uid://dg4w2exky2eud" path="res://scripts/audio_stream_player_2.gd" id="7_skpiv"]
-[ext_resource type="Script" uid="uid://d3nxu7dlceyst" path="res://scripts/mulai_menu.gd" id="8_mwmg2"]
+[ext_resource type="Script" path="res://scripts/audio_stream_player_2.gd" id="7_skpiv"]
+[ext_resource type="Script" path="res://scripts/mulai_menu.gd" id="8_mwmg2"]
 [ext_resource type="Texture2D" uid="uid://daf8lnnilrqjc" path="res://Assets/ButtonIcon/Rectangle 144 (1).png" id="9_exptw"]
 [ext_resource type="Texture2D" uid="uid://dnvanmgh52hxx" path="res://Assets/ButtonIcon/salah.png" id="10_dsunt"]
 
@@ -314,7 +314,6 @@ bus = &"Music"
 script = ExtResource("7_skpiv")
 
 [node name="Mulai_menu" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 936.0
 offset_top = 547.0
@@ -405,10 +404,10 @@ caret_blink_interval = 0.34
 
 [node name="warning_label" type="Label" parent="Mulai_menu/TextureRect/LineEdit"]
 layout_mode = 0
-offset_left = -103.203
-offset_top = -249.11
-offset_right = 391.797
-offset_bottom = -218.11
+offset_left = -111.032
+offset_top = -170.819
+offset_right = 383.968
+offset_bottom = -139.819
 theme_override_colors/font_color = Color(1, 0.027451, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.4, 0.00784314, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
