@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu7bpvykel1wu"]
+[gd_scene load_steps=8 format=3 uid="uid://e3fh3c3grkx8"]
 
-[ext_resource type="Script" uid="uid://diy1so64iiqk" path="res://Scenes/score_screen.gd" id="1_rdmsy"]
+[ext_resource type="Script" path="res://Scenes/score_screen.gd" id="1_rdmsy"]
 [ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="2_2eyjw"]
 [ext_resource type="Texture2D" uid="uid://8eoy0ha63eio" path="res://Assets/ButtonIcon/no.png" id="3_2eyjw"]
+[ext_resource type="AudioStream" uid="uid://cs1jxlt73ron3" path="res://Scrabble Music - Scrabble 1.mp3" id="4_ca0n4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xd8kl"]
 bg_color = Color(0.145098, 0.168627, 0.203922, 1)
@@ -202,5 +203,9 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_fffhw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_u0fsb")
 icon = ExtResource("3_2eyjw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ca0n4")
+bus = &"Music"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
