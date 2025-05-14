@@ -9,8 +9,6 @@ const total_time_seconds = 60*10
 @onready var bag: Node2D = $Bag
 @onready var bag_2: Panel = $Bag2
 
-@onready var scroll_container: ScrollContainer = $Definition/VBoxContainer/ScrollContainer
-@onready var toggle_button: Button = $Definition/VBoxContainer/HBoxContainer/ShowDefiniton
 @onready var other: Button = $GameplayButton/HBoxContainer/Other
 @onready var definition: Panel = $Definition
 
@@ -23,6 +21,7 @@ var game_reset = null
 
 func _ready():
 	# Your existing code...
+	print(Global.player_bag.size())
 	nama.text = Global.username
 	turns_value.text = str(Global.turn)
 	timer.start()
@@ -43,8 +42,6 @@ func _ready():
 		
 	Global.player_bag.shuffle()
 	$Bag.debug_draw_tiles(["N","A","D","A", "K", "A", "N"])
-	scroll_container.visible = false
-	toggle_button.pressed.connect(_on_toggle_definition)
 	
 	# Initialize the swap manager
 	if !has_node("SwapManager"):
@@ -122,11 +119,6 @@ func update_bag_counts():
 					label_node.text = str(letter_counts.get(huruf, 0))
 
 var is_expanded := false
-
-func _on_toggle_definition():
-	is_expanded = !is_expanded
-	scroll_container.visible = is_expanded
-	toggle_button.text = "🔼" if is_expanded else "🔽"
 
 func _on_other_pressed() -> void:
 	definition_menu()
