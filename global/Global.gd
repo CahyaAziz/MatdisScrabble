@@ -76,7 +76,4 @@ var player_bag = [
 	'W', 'W',
 	'Q',
 	'V',
-	
-	# Blank tiles
-	'blank', 'blank'
 ]
