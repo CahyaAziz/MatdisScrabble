@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://kxljhkmdhsjv"]
+[gd_scene load_steps=71 format=3 uid="uid://kxljhkmdhsjv"]
 
 [ext_resource type="Texture2D" uid="uid://t6rdxrbjqvds" path="res://Assets/GridTiles/Tilemap.svg" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://crwdyicmk0tkd" path="res://scripts/game.gd" id="1_vef74"]
@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://bmumk1dr22n44" path="res://Assets/ButtonIcon/Bag.svg" id="5_j5wjh"]
 [ext_resource type="Script" uid="uid://bws1rjijysee5" path="res://Assets/TileSets/scene/player_hand.gd" id="5_vtaks"]
 [ext_resource type="Script" uid="uid://ciwonlsjaoqml" path="res://Assets/TileSets/bag.gd" id="6_kvpfn"]
-[ext_resource type="Texture2D" uid="uid://bciwqel88673n" path="res://Assets/ButtonIcon/Bar.svg" id="6_ryrav"]
 [ext_resource type="Texture2D" uid="uid://djko33vy5f6gx" path="res://Assets/TileSets/A_Tile.svg" id="12_6uxt2"]
 [ext_resource type="Script" uid="uid://c1ia6bqf77udb" path="res://scripts/logic_manager.gd" id="12_dinhu"]
-[ext_resource type="Script" uid="uid://bsh2j7w6f7w2w" path="res://Scenes/swap_manager.gd" id="12_pr1ej"]
+[ext_resource type="Script" uid="uid://bsh2j7w6f7w2w" path="res://scenes/swap_manager.gd" id="12_pr1ej"]
+[ext_resource type="Texture2D" uid="uid://mffay661ce6p" path="res://Assets/ButtonIcon/Vector.svg" id="13_05nbr"]
 [ext_resource type="Texture2D" uid="uid://de2jhvrgu41iy" path="res://Assets/TileSets/B_Tile.svg" id="13_ym3tv"]
 [ext_resource type="Texture2D" uid="uid://0f64nplg20w6" path="res://Assets/TileSets/C_Tile.svg" id="14_bwj6o"]
 [ext_resource type="Texture2D" uid="uid://bt1qprs7e5818" path="res://Assets/TileSets/D_Tile.svg" id="15_f3c8l"]
@@ -42,11 +42,11 @@
 [ext_resource type="Texture2D" uid="uid://c60wb5i3pyrf0" path="res://Assets/TileSets/blank_Tile.svg" id="39_f3c8l"]
 [ext_resource type="Texture2D" uid="uid://qf2m5idq6up8" path="res://Assets/ButtonIcon/Group 2.png" id="39_ym3tv"]
 [ext_resource type="Texture2D" uid="uid://dhp3qg7f4itlv" path="res://Assets/ButtonIcon/ohno.png" id="40_f3c8l"]
-[ext_resource type="Script" path="res://scripts/definition.gd" id="43_05nbr"]
 [ext_resource type="AudioStream" uid="uid://cjke87uy1g4f4" path="res://Assets/Sounds/salah.mp3" id="44_631el"]
 [ext_resource type="AudioStream" uid="uid://cfmvyqjqifmxs" path="res://Assets/Sounds/Benar.mp3" id="45_vs120"]
 [ext_resource type="AudioStream" uid="uid://iqn0rc5rcv6t" path="res://Assets/Sounds/kik.mp3" id="46_v2cs8"]
 [ext_resource type="AudioStream" uid="uid://c3a27cjql7cq8" path="res://Assets/Sounds/suffle.mp3" id="47_32sfa"]
+[ext_resource type="Script" uid="uid://cslmha3i2tbbo" path="res://scripts/definition.gd" id="43_05nbr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
 texture = ExtResource("1_80nbo")
@@ -208,6 +208,83 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05nbr"]
+bg_color = Color(0.239216, 0.235294, 0.290196, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sl42"]
+bg_color = Color(0.150054, 0.146906, 0.181427, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oaba0"]
+bg_color = Color(0.19288, 0.189114, 0.230514, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_458eo"]
+bg_color = Color(0.204239, 0.199495, 0.242281, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3rex"]
+bg_color = Color(0.196078, 0.196078, 0.239216, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fedci"]
+bg_color = Color(0.156307, 0.1539, 0.19, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qswn"]
+bg_color = Color(0.239216, 0.235294, 0.290196, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_vef74")
@@ -1133,7 +1210,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_vef74")
 
-[node name="Button" type="Button" parent="TopUI/HBoxContainer2/Panel"]
+[node name="Resign" type="Button" parent="TopUI/HBoxContainer2/Panel"]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 11
@@ -1148,18 +1225,18 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_mfdv2")
 
-[node name="TextureRect" type="TextureRect" parent="TopUI/HBoxContainer2/Panel/Button"]
+[node name="TextureRect" type="TextureRect" parent="TopUI/HBoxContainer2/Panel/Resign"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = -10.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_ryrav")
+texture = ExtResource("13_05nbr")
 expand_mode = 1
 stretch_mode = 5
 
@@ -1676,11 +1753,70 @@ bus = &"SFX"
 [node name="sfx_suffle_start" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("47_32sfa")
 bus = &"SFX"
+[node name="ResignPanel" type="Panel" parent="."]
+visible = false
+z_index = 5
+clip_contents = true
+offset_left = 1016.0
+offset_top = 648.0
+offset_right = 1573.0
+offset_bottom = 858.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_05nbr")
+
+[node name="Label" type="Label" parent="ResignPanel"]
+layout_mode = 0
+offset_right = 557.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 31
+text = "Anda yakin ingin menyerah?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ResignPanel"]
+layout_mode = 0
+offset_top = 79.0
+offset_right = 557.0
+offset_bottom = 83.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResignPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = 12.5
+offset_right = 254.0
+offset_bottom = 69.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Yes" type="Button" parent="ResignPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_0sl42")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oaba0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_458eo")
+text = "Ya, menyerah"
+
+[node name="No" type="Button" parent="ResignPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_h3rex")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fedci")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8qswn")
+text = "Tidak, lanjutkan"
 
 [connection signal="pressed" from="GameplayButton/HBoxContainer/Other" to="." method="_on_other_pressed"]
 [connection signal="pressed" from="GameplayButton/HBoxContainer/Swap" to="SwapManager" method="_on_swap_button_pressed"]
 [connection signal="pressed" from="GameplayButton/HBoxContainer/Submit" to="LogicManager" method="_on_submit_pressed"]
 [connection signal="pressed" from="GameplayButton/HBoxContainer/Bag" to="." method="_on_bag_pressed"]
+[connection signal="pressed" from="TopUI/HBoxContainer2/Panel/Resign" to="." method="_on_resign_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Bag2/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Definition/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ResignPanel/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="ResignPanel/HBoxContainer/No" to="." method="_on_no_pressed"]
