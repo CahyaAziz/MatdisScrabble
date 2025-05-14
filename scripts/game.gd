@@ -23,6 +23,7 @@ var game_reset = null
 
 func _ready():
 	# Your existing code...
+	print(Global.player_bag.size())
 	nama.text = Global.username
 	turns_value.text = str(Global.turn)
 	timer.start()
