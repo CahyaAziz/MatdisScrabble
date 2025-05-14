@@ -6,6 +6,9 @@ extends Node2D
 @onready var curr_seconds : int = 60*10
 const total_time_seconds = 60*10
 
+@onready var resign_panel: Panel = $ResignPanel
+
+
 @onready var bag: Node2D = $Bag
 @onready var bag_2: Panel = $Bag2
 
@@ -71,7 +74,7 @@ func _on_timer_timeout():
 
 func selesai_lebih_awal():
 	Global.sisa_waktu = curr_seconds
-	get_tree().change_scene_to_file("res://Scenes/ScoreScreen.tscn")
+	get_tree().change_scene_to_file("res://scenes/Ends.tscn")
 
 
 func _on_button_3_pressed() -> void:
@@ -127,3 +130,12 @@ func _on_bag_pressed() -> void:
 	update_bag_counts()
 	bag_menu()
 	
+func _on_resign_pressed() -> void:
+	resign_panel.visible = true
+
+func _on_yes_pressed() -> void:
+	print("Ending...")
+	selesai_lebih_awal()
+
+func _on_no_pressed() -> void:
+	resign_panel.visible = false
