@@ -1,5 +1,8 @@
 extends Control
 
+@onready var menu_click: AudioStreamPlayer = $MenuClick
+
+
 func _ready():
 	Global.muat_histori()
 
@@ -31,4 +34,5 @@ func _ready():
 			waktu_label.text = "%02d:%02d" % [menit, detik]
 
 func _on_button_pressed() -> void:
+	menu_click.play()
 	get_tree().change_scene_to_file("res://Scenes/Main_Menu.tscn")
