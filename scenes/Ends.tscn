@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bx1w5qie7xm7p"]
+[gd_scene load_steps=7 format=3 uid="uid://bx1w5qie7xm7p"]
 
 [ext_resource type="Script" uid="uid://b6abyp6aqhrte" path="res://scenes/ends.gd" id="1_fwpmy"]
 [ext_resource type="Texture2D" uid="uid://oahheuo6spup" path="res://Assets/ButtonIcon/Frame 973 (2).png" id="1_ibbl8"]
 [ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="2_fwpmy"]
+[ext_resource type="AudioStream" uid="uid://cs1jxlt73ron3" path="res://Scrabble Music - Scrabble 1.mp3" id="4_ajog1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhv6l"]
 texture = ExtResource("1_ibbl8")
@@ -63,5 +64,10 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_1yn8t")
 text = "NEXT"
 icon_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ajog1")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

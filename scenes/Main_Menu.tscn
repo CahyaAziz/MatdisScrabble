@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://cj26m1ltri7sf"]
 
 [ext_resource type="Script" uid="uid://bl25ombvodojc" path="res://scripts/main_menu.gd" id="1_7260r"]
-[ext_resource type="Texture2D" uid="uid://mddu2d1somlh" path="res://Assets/GridTiles/Frame 979.png" id="2_l3124"]
+[ext_resource type="Texture2D" uid="uid://b8smgov764boy" path="res://4a3a0171-374d-43e8-b41d-74a8d4d1eb66.jpg" id="2_7260r"]
 [ext_resource type="FontFile" uid="uid://c8gwtcljmhxo8" path="res://Assets/Fonts/Backso.ttf" id="3_ecnfn"]
 [ext_resource type="Script" uid="uid://syow0uu01wa1" path="res://scripts/audio_control.gd" id="4_kiw3d"]
 [ext_resource type="Script" uid="uid://jf1sted30gtr" path="res://scripts/sfx.gd" id="5_8wqjl"]
@@ -28,7 +28,7 @@ default_font = SubResource("FontFile_5cvai")
 default_font_size = 12
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtjmy"]
-texture = ExtResource("2_l3124")
+texture = ExtResource("2_7260r")
 modulate_color = Color(0.408329, 0.408329, 0.408329, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wugcc"]
@@ -97,10 +97,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -9.0
-offset_top = -5.0
-offset_right = -5.0
-offset_bottom = -3.0
+offset_left = -4.0
+offset_top = -258.0
+offset_right = 24.0
+offset_bottom = 145.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_domf7")
@@ -198,6 +198,8 @@ theme_override_font_sizes/font_size = 200
 text = "LexIQ"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+autoplay = true
+bus = &"Music"
 
 [node name="Options" type="Panel" parent="."]
 visible = false
@@ -417,6 +419,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 justification_flags = 171
 uppercase = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="Mulai_menu/TextureRect/LineEdit"]
+position = Vector2(-783.63, -498.932)
+scale = Vector2(0.711744, 0.711744)
+stream = ExtResource("6_73mli")
+autoplay = true
+bus = &"Music"
+script = ExtResource("7_skpiv")
 
 [connection signal="pressed" from="MainButton/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MainButton/Option" to="." method="_on_setting_pressed"]

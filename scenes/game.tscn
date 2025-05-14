@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://kxljhkmdhsjv"]
+[gd_scene load_steps=66 format=3 uid="uid://kxljhkmdhsjv"]
 
 [ext_resource type="Texture2D" uid="uid://t6rdxrbjqvds" path="res://Assets/GridTiles/Tilemap.svg" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://crwdyicmk0tkd" path="res://scripts/game.gd" id="1_vef74"]
@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://ciwonlsjaoqml" path="res://Assets/TileSets/bag.gd" id="6_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://bciwqel88673n" path="res://Assets/ButtonIcon/Bar.svg" id="6_ryrav"]
 [ext_resource type="Texture2D" uid="uid://djko33vy5f6gx" path="res://Assets/TileSets/A_Tile.svg" id="12_6uxt2"]
-[ext_resource type="Script" uid="uid://c1ia6bqf77udb" path="res://scripts/logic_manager.gd" id="12_dinhu"]
+[ext_resource type="Script" path="res://scripts/logic_manager.gd" id="12_dinhu"]
 [ext_resource type="Script" uid="uid://bsh2j7w6f7w2w" path="res://scenes/swap_manager.gd" id="12_pr1ej"]
 [ext_resource type="Texture2D" uid="uid://de2jhvrgu41iy" path="res://Assets/TileSets/B_Tile.svg" id="13_ym3tv"]
 [ext_resource type="Texture2D" uid="uid://0f64nplg20w6" path="res://Assets/TileSets/C_Tile.svg" id="14_bwj6o"]
@@ -42,6 +42,8 @@
 [ext_resource type="Texture2D" uid="uid://c60wb5i3pyrf0" path="res://Assets/TileSets/blank_Tile.svg" id="39_f3c8l"]
 [ext_resource type="Texture2D" uid="uid://qf2m5idq6up8" path="res://Assets/ButtonIcon/Group 2.png" id="39_ym3tv"]
 [ext_resource type="Texture2D" uid="uid://dhp3qg7f4itlv" path="res://Assets/ButtonIcon/ohno.png" id="40_f3c8l"]
+[ext_resource type="AudioStream" uid="uid://cs1jxlt73ron3" path="res://Scrabble Music - Scrabble 1.mp3" id="43_0sl42"]
+[ext_resource type="Script" uid="uid://dg4w2exky2eud" path="res://scripts/audio_stream_player_2.gd" id="44_oaba0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
 texture = ExtResource("1_80nbo")
@@ -1692,6 +1694,25 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_bu0y5")
 icon = ExtResource("40_f3c8l")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("43_0sl42")
+autoplay = true
+bus = &"Music"
+script = ExtResource("44_oaba0")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="AudioStreamPlayer2"]
+stream = ExtResource("43_0sl42")
+autoplay = true
+bus = &"Music"
+script = ExtResource("44_oaba0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("43_0sl42")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="GameplayButton/HBoxContainer/Other" to="." method="_on_other_pressed"]
 [connection signal="pressed" from="GameplayButton/HBoxContainer/Swap" to="SwapManager" method="_on_swap_button_pressed"]
